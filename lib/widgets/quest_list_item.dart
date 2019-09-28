@@ -17,41 +17,46 @@ class QuestListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Icon(quest.icon, size: 78),
-        Container(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              quest.title,
-              style: theme.textTheme.title,
-            ),
-            Container(
-              height: 3,
-            ),
-            Text(
-              quest.description,
-              style: theme.textTheme.subtitle,
-            ),
-            Container(
-              height: 10,
-            ),
-            LinearPercentIndicator(
-              width: 300,
-              animation: true,
-              lineHeight: 15.0,
-              animationDuration: 2000,
-              percent: quest.percent,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Icon(quest.icon, size: 78),
+          Container(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+              Text(
+                quest.title,
+                style: theme.textTheme.title,
+              ),
+              Container(
+                height: 3,
+              ),
+                Text(
+                  quest.description,
+                  style: theme.textTheme.subtitle,
+                ),
+                Container(
+                  height: 10,
+                ),
+                LinearPercentIndicator(
+                  width: 300,
+                  animation: true,
+                  lineHeight: 15.0,
+                  animationDuration: 2000,
+                  percent: quest.percent,
 //                center: Text("90.0%"),
-              linearStrokeCap: LinearStrokeCap.roundAll,
-              progressColor: Colors.greenAccent,
+                  linearStrokeCap: LinearStrokeCap.roundAll,
+                  progressColor: Colors.greenAccent,
+                ),
+              ],
             ),
-          ],
-        ),
-      ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -9,18 +9,27 @@ import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
 const _text1 = [
-  '27-29 вересня 2019 року в Києві, на базі UNIT Factory за підтримки Посольства Франції пройшов Hackathon Codage Kyiv.'
+  '27-29 вересня 2019 року в Києві, на базі UNIT Factory за підтримки Посольства Франції пройшов Hackathon Codage Kyiv.',
+  '',
 ];
 const _text2 = [
-  'У створенні інноваційного рішення для підняття культурного рівня та розвитку туризму в Одесі брали участь 5 команд. Складалися вони з студентів UNIT Factory і Одеського Національного Університету І.І. Мечникова.'
+  'У створенні інноваційного рішення для підняття культурного рівня та розвитку туризму в Одесі брали участь 5 команд. Складалися вони з студентів UNIT Factory і Одеського Національного Університету І.І. Мечникова.',
+  '',
 ];
 const _text3 = [
-  'За підсумками конкурсу перше місце посіла команда "uZHAS". Учасники команди: Сандра Задорожна, Євген Федорич, Олександр Крижанівський, Анна Мудра, Анна Ткачук.'
+  'За підсумками конкурсу перше місце посіла команда "uZHAS". Учасники команди: Сандра Задорожна, Євген Федорич, Олександр Крижанівський, Анна Мудра, Анна Ткачук.',
+  '',
 ];
 
-const _text4 = ['Вітаємо переможців!'];
+const _text4 = [
+  'Вітаємо переможців!',
+  '',
+];
 
-const _comment = ['Молодці!'];
+const _comment = [
+  'Молодці!',
+  '',
+];
 
 // TODO: make post likeable for the joke
 class PostDetailPage extends StatelessWidget {
@@ -93,7 +102,10 @@ class PostDetailPage extends StatelessWidget {
           ),
           Container(height: 10),
           HorizontalPadding(
-            child: Text(_text4[currentLanguage], style: theme.textTheme.headline,),
+            child: Text(
+              _text4[currentLanguage],
+              style: theme.textTheme.headline,
+            ),
           ),
           Container(height: 20),
           Image.asset('assets/hackathon_finish.jpg'),

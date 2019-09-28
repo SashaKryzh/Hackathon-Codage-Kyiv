@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hackathon/consts.dart';
 import 'package:hackathon/modules/achievement.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
+const _about = [
+  'ілвоад діволаділо віоад овіалоє',
+  '',
+];
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -161,7 +167,7 @@ class ProfilePage extends StatelessWidget {
                   // TODO: change
                   Container(
                     child: Text(
-                      'kdsjflak\nsdjfljsdfljasdflkjsadlfkjsldkjfsaldjkfsladkjfalsdjkflasdjflasdjfladsjk',
+                      _about[currentLanguage],
                       textAlign: TextAlign.center,
                     ),
                     width: 150,

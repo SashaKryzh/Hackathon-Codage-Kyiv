@@ -143,7 +143,7 @@ class _PlacesMapViewState extends State<PlacesMapView> {
     _markers = Place.places.map((i) {
       return Marker(
         markerId: MarkerId('1'),
-        position: LatLng(46.4836981, 30.7362512),
+        position: i.lng != null ? LatLng(i.lat, i.lng) : LatLng(46.4836981, 30.7362512),
         infoWindow: InfoWindow(
           title: i.title,
           snippet: i.description,
