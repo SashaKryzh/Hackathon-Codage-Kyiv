@@ -15,7 +15,6 @@ class PlaceListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(place.title),
-      subtitle: Text(place.description),
       onTap: () => onTap(place),
     );
   }
