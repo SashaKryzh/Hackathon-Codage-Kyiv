@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/modules/quest.dart';
 import 'package:hackathon/modules/route.dart' as r;
+import 'package:percent_indicator/percent_indicator.dart';
 
 // TODO: make cool
 class QuestListItem extends StatelessWidget {
@@ -14,10 +15,43 @@ class QuestListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(quest.title),
-      subtitle: Text(quest.description),
-      onTap: () => onTap(quest),
+    final theme = Theme.of(context);
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Icon(quest.icon, size: 78),
+        Container(width: 10),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              quest.title,
+              style: theme.textTheme.title,
+            ),
+            Container(
+              height: 3,
+            ),
+            Text(
+              quest.description,
+              style: theme.textTheme.subtitle,
+            ),
+            Container(
+              height: 10,
+            ),
+            LinearPercentIndicator(
+              width: 300,
+              animation: true,
+              lineHeight: 15.0,
+              animationDuration: 2000,
+              percent: quest.percent,
+//                center: Text("90.0%"),
+              linearStrokeCap: LinearStrokeCap.roundAll,
+              progressColor: Colors.greenAccent,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

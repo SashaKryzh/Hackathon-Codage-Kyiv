@@ -34,13 +34,25 @@ class Place implements ListItem {
         creator: 'мануфактура "Ж.Ж. Дюкель и син"',
         image: 'assets/places/3.jpg'),
     Place(
+        title: 'Перший міський театр',
+        address: 'провулок Чайковського',
+        image: 'assets/places/9.jpg'),
+    Place(
+        title: 'Комплекс Пале-Рояль',
+        address: 'вулиця Катерининська, 5-13',
+        image: 'assets/places/10,\ 11.jpg'),
+    Place(
+        title: 'Рішельєвський ліцей',
+        address: 'вулиця Деребасівська, 16',
+        image: 'assets/places/12.jpg'),
+    Place(
+        title: 'Арка Дачі Ланжерона',
+        address: 'Ланжеронівська площа',
+        image: 'assets/places/21.jpg'),
+    Place(
         title: 'Будинок Коклена',
         address: 'провулок Некрасова, 7',
         image: 'assets/places/1.jpg'),
-    Place(
-        title: 'Будинок Оттона',
-        address: 'вулиця  Гоголя, 8',
-        image: 'assets/places/2.jpg'),
     Place(
         title: 'Пам\'ятник Дюку Де Рішельє',
         address: 'Приморський бульвар, 1',
@@ -62,21 +74,9 @@ class Place implements ListItem {
         address: 'вулиця Ланжиронівська, 4',
         image: 'assets/places/8.jpg'),
     Place(
-        title: 'Перший міський театр',
-        address: 'провулок Чайковського',
-        image: 'assets/places/9.jpg'),
-    Place(
-        title: 'Комплекс Пале-Рояль',
-        address: 'вулиця Катерининська, 5-13',
-        image: 'assets/places/10,\ 11.jpg'),
-    Place(
         title: 'Будинок Лантье',
         address: 'вулиця Катерининська, 9',
         image: 'assets/places/10,\ 11.jpg'),
-    Place(
-        title: 'Рішельєвський ліцей',
-        address: 'вулиця Деребасівська, 16',
-        image: 'assets/places/12.jpg'),
     Place(
         title: 'Будинок Жуль\'єна',
         address: 'вулиця Деребасівська, 19',
@@ -110,10 +110,11 @@ class Place implements ListItem {
         address: 'вулиця Жуковського',
         image: 'assets/places/20.jpg'),
     Place(
-        title: 'Арка Дачі Ланжерона',
-        address: 'Ланжеронівська площа',
-        image: 'assets/places/21.jpg'),
+        title: 'Будинок Оттона',
+        address: 'вулиця  Гоголя, 8',
+        image: 'assets/places/2.jpg'),
   ];
+
   static List<Place> placesFr = [
     Place(title: '', address: 'провулок Некрасова, 7'),
     Place(title: 'Будинок Оттона', address: 'вулиця  Гоголя, 8'),

@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hackathon/consts.dart';
 import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/widgets/block_title.dart';
+import 'package:hackathon/widgets/horizontal_padding.dart';
 
 const String grLegend =
     'Давние и седые мифы гласят о том, что грифон является хранителем сокровищ. И что еще древние цари прятали в их статуи свои богатства. Хоть одесский гриффон и переехал в уголок старой Одессы со Старобазарной площади и не имеет отношения к царям, авантюристы во все времена верили, что хитрые купцы что-то да припрятали. Отсюда, дамы и господа, вечные пробоины в плече гриффона. (Ох, я крайне надеюсь, что к Вашему приходу городская управа уже отремонтировала бедную зверюшку).';
@@ -76,7 +78,7 @@ class PlaceDetailPage extends StatelessWidget {
           Container(
             height: 10,
           ),
-          _Padding(
+          HorizontalPadding(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -108,7 +110,7 @@ class PlaceDetailPage extends StatelessWidget {
 //            padding: const EdgeInsets.all(8.0),
 //            child: BlockTitle(title: 'Description'),
 //          ),
-          _Padding(
+          HorizontalPadding(
             child: Text(
                 'Скульптура мифического животного была перенесена в этот сквер в 1960-70-х годах из Старобазарного (ныне Кировского) сквера. Туда же он попал либо с уничтоженного Первого христианского кладбища, либо из какого-то санатория, который до революции был частной дачей.'),
           ),
@@ -135,14 +137,14 @@ class PlaceDetailPage extends StatelessWidget {
               ),
             ),
           ),
-          _Padding(
+          HorizontalPadding(
             child: Text(
                 'Когда - то на месте Кировского сквера был базар, четыре входа которого охраняли восемь грифонов. Из восьми скульптур сохранилась лишь одна. Однако, краеведы утверждают, что установить точную биографию этого мифического существа уже не представляется возможным.'),
           ),
           Container(height: 20),
           Image.asset('assets/places/gr/32.jpg'),
           Container(height: 20),
-          _Padding(
+          HorizontalPadding(
             child: Text(
                 'Данная скульптура регулярно подвергается актам вандализма, вдохновленными городскими легендами и, затем, реставрируется властями, вследствии чего, оттиск мануфактуры практически не просматривается.'),
           ),
@@ -150,7 +152,7 @@ class PlaceDetailPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Divider(),
           ),
-          _Padding(child: Text('Місцезнаходження: ${p.address}')),
+          HorizontalPadding(child: Text('Місцезнаходження: ${p.address}')),
           Container(
             height: 250,
             child: Card(
@@ -193,8 +195,11 @@ class PlaceDetailPage extends StatelessWidget {
                 BlockTitle(title: 'Reviews'),
                 Card(
                   child: ListTile(
-                    title: Text('Vasia'),
-                    subtitle: Text('Very cool!'),
+                    title: Text(userName[currentLanguage]),
+                    subtitle: Text(commentOnPost[currentLanguage]),
+                    leading: CircleAvatar(
+                      backgroundImage: ExactAssetImage('assets/Anna.jpg'),
+                    ),
                   ),
                 ),
               ],
@@ -202,20 +207,6 @@ class PlaceDetailPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _Padding extends StatelessWidget {
-  final Widget child;
-
-  _Padding({this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 17),
-      child: child,
     );
   }
 }

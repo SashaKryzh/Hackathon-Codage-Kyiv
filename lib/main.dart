@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/home.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
+import 'package:hackathon/screens/post_detail_page.dart';
 import 'package:hackathon/screens/quest_detail_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 
@@ -38,6 +39,11 @@ Route onGenerateRoute(RouteSettings settings) {
       QuestDetailPage args = settings.arguments;
       return MaterialPageRoute(
         builder: (context) => QuestDetailPage(quest: args.quest),
+      );
+
+    case PostDetailPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => PostDetailPage(),
       );
 
     default:
