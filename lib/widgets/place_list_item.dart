@@ -22,10 +22,12 @@ class PlaceListItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            place.image != null ? Image.asset(place.image) : Container(),
+            place.image != null
+                ? Image.asset(place.image)
+                : Container(),
             ListTile(
               title: Text(place.title, style: theme.textTheme.title,),
-              subtitle: Text(place.description ?? description, maxLines: 2, overflow: TextOverflow.ellipsis,),
+              subtitle: Text(place.shortDescription ?? description, maxLines: 2, overflow: TextOverflow.ellipsis,),
             ),
           ],
         ),

@@ -48,6 +48,7 @@ flutter:
     - assets/Anna.jpg
     - assets/events/
     - assets/places/
+    - assets/places/gr/
     - assets/images/Head_of_Minerva.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

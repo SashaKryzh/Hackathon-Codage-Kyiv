@@ -176,7 +176,9 @@ class _PlacesMapViewState extends State<PlacesMapView> {
   }
 
   void onMapCreated(GoogleMapController controller) {
-    _controller.complete(controller);
+    if (_controller.isCompleted == false) {
+      _controller.complete(controller);
+    }
   }
 
   var _currentMapType = MapType.normal;
