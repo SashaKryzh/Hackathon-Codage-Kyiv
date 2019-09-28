@@ -22,3 +22,4 @@ class Route implements ListItem {
       places: Place.places,
     ),
   ];
+}
