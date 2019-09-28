@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/home.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
+import 'package:hackathon/screens/quest_detail_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 
 void main() => runApp(MyApp());
@@ -31,6 +32,12 @@ Route onGenerateRoute(RouteSettings settings) {
       RouteDetailPage args = settings.arguments;
       return MaterialPageRoute(
         builder: (context) => RouteDetailPage(route: args.route),
+      );
+
+    case QuestDetailPage.routeName:
+      QuestDetailPage args = settings.arguments;
+      return MaterialPageRoute(
+        builder: (context) => QuestDetailPage(quest: args.quest),
       );
 
     default:

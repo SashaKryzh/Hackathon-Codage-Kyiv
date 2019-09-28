@@ -3,6 +3,7 @@ import 'package:hackathon/screens/events_page.dart';
 import 'package:hackathon/screens/news_page.dart';
 import 'package:hackathon/screens/discover_page.dart';
 import 'package:hackathon/screens/profile_page.dart';
+import 'package:hackathon/screens/quest_page.dart';
 import 'package:hackathon/screens/routes_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           NewsPage(),
           DiscoverPage(),
-          RoutesPage(),
+          QuestPage(),
           EventsPage(),
           ProfilePage(),
         ],
@@ -44,6 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             title: Text('Discover'),
             icon: Icon(Icons.map),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Quests'),
+            icon: Icon(Icons.border_color),
           ),
           BottomNavigationBarItem(
             title: Text('Events'),

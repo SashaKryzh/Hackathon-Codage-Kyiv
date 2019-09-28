@@ -8,6 +8,7 @@ import 'package:hackathon/screens/places_detail_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 import 'package:hackathon/widgets/place_list_item.dart';
 import 'package:hackathon/modules/route.dart' as r;
+import 'package:hackathon/widgets/route_list_item.dart';
 
 class DiscoverPage extends StatefulWidget {
   @override
@@ -63,6 +64,7 @@ class DiscoverListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: make one specific place and route always on top
     var items = List<ListItem>.from(places) + routes;
     items.shuffle();
 
@@ -85,12 +87,24 @@ class DiscoverListView extends StatelessWidget {
     }
 
     return ListView.builder(
-      itemCount: Place.places.length,
+      itemCount: items.length,
       itemBuilder: (context, index) {
-        return PlaceListItem(
-          place: Place.places[index],
-          onTap: onPlaceTap,
-        );
+        final item = items[index];
+        switch (item.runtimeType) {
+          case Place:
+            return PlaceListItem(
+              place: item,
+              onTap: onPlaceTap,
+            );
+          case r.Route:
+            return RouteListItem(
+              route: item,
+              onTap: onRouteTap,
+            );
+          default:
+            print('Something wrong, I can feel it.');
+            return Container();
+        }
       },
     );
   }
