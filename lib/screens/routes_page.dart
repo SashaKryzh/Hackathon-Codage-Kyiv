@@ -12,7 +12,7 @@ class RoutesPage extends StatelessWidget {
       Navigator.pushNamed(
         context,
         RouteDetailPage.routeName,
-        arguments: RouteDetailPage(route: route),
+        arguments: RouteDetailPage(),
       );
     }
 

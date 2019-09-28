@@ -13,9 +13,23 @@ class RouteListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(route.title),
-      subtitle: Text(route.description),
+    final theme = Theme.of(context);
+
+    return GestureDetector(
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            route.image != null
+                ? Image.asset(route.image)
+                : Container(),
+            ListTile(
+              title: Text(route.title, style: theme.textTheme.title,),
+              subtitle: Text(route.shortDescription ?? '', maxLines: 2, overflow: TextOverflow.ellipsis,),
+            ),
+          ],
+        ),
+      ),
       onTap: () => onTap(route),
     );
   }

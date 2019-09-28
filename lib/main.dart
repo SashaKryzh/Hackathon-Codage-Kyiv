@@ -30,9 +30,8 @@ Route onGenerateRoute(RouteSettings settings) {
       );
 
     case RouteDetailPage.routeName:
-      RouteDetailPage args = settings.arguments;
       return MaterialPageRoute(
-        builder: (context) => RouteDetailPage(route: args.route),
+        builder: (context) => RouteDetailPage(),
       );
 
     case QuestDetailPage.routeName:
