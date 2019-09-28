@@ -32,15 +32,21 @@ class Place implements ListItem {
         description:
             'Скульптура міфічної тварини була перенесена в цей сквер у 1960-70-і рр. з Старобазарного (нині Кіровського) скверу. Туди ж він потрапив з знищеного Першого християнського цвинтаря, або з якогось санаторію, який до революції був приватної дачею. Коли - то на місці Кіровського скверу був базар, чотири входи якого охороняли вісім грифонів. З восьми скульптур збереглася лише одна. Однак, краєзнавці стверджують, що встановити точну біографію цієї міфічної істоти вже не представляється можливим.Дана скульптура регулярно піддається актам вандалізму, натхненними міськими легендами і, потім, реставрується владою, внаслідок чого, відбиток мануфактури практично не проглядається.',
         creator: 'мануфактура "Ж.Ж. Дюкель и син"',
-        image: 'assets/places/3.jpg'),
+        image: 'assets/places/3.jpg',
+        lat: 46.490223,
+        lng: 30.735547),
     Place(
         title: 'Перший міський театр',
         address: 'провулок Чайковського',
-        image: 'assets/places/9.jpg'),
+        image: 'assets/places/9.jpg',
+        lat: 46.4844979,
+        lng: 30.7304077),
     Place(
         title: 'Комплекс Пале-Рояль',
         address: 'вулиця Катерининська, 5-13',
-        image: 'assets/places/10,\ 11.jpg'),
+        image: 'assets/places/10,\ 11.jpg',
+        lat: 46.4844979,
+        lng: 30.7304077),
     Place(
         title: 'Рішельєвський ліцей',
         address: 'вулиця Деребасівська, 16',
@@ -52,23 +58,33 @@ class Place implements ListItem {
     Place(
         title: 'Будинок Коклена',
         address: 'провулок Некрасова, 7',
-        image: 'assets/places/1.jpg'),
+        image: 'assets/places/1.jpg',
+        lat: 46.488982,
+        lng: 30.733927),
     Place(
         title: 'Пам\'ятник Дюку Де Рішельє',
         address: 'Приморський бульвар, 1',
-        image: 'assets/places/4.jpg'),
+        image: 'assets/places/4.jpg',
+        lat: 46.489506,
+        lng: 30.739506,),
     Place(
         title: 'Підпірні Стіни',
         address: 'Приморський бульвар',
-        image: 'assets/places/5.jpg'),
+        image: 'assets/places/5.jpg',
+        lat: 46.488251,
+        lng: 30.740858,),
     Place(
         title: 'Готель \"Лондонська\"',
         address: 'Приморський бульвар, 11',
-        image: 'assets/places/6.jpg'),
+        image: 'assets/places/6.jpg',
+        lat:,
+        lng:),
     Place(
         title: 'Палац Гагаріних',
         address: 'вулиця Ланжиронівська, 2',
-        image: 'assets/places/7.jpg'),
+        image: 'assets/places/7.jpg',
+        lat: 46.484853,
+        lng: 30.744087),
     Place(
         title: 'Скульптура-Фонтан \"Молодість\"',
         address: 'вулиця Ланжиронівська, 4',
@@ -112,7 +128,9 @@ class Place implements ListItem {
     Place(
         title: 'Будинок Оттона',
         address: 'вулиця  Гоголя, 8',
-        image: 'assets/places/2.jpg'),
+        image: 'assets/places/2.jpg',
+        lat: 46.489514,
+        lng: 30.735548),
   ];
 
   static List<Place> placesFr = [
@@ -127,7 +145,8 @@ class Place implements ListItem {
         creator: 'мануфактура "Ж.Ж. Дюкель и син"'),
     Place(
         title: 'Пам\'ятник Дюку Де Рішельє', address: 'Приморський бульвар, 1'),
-    Place(title: 'Підпірні Стіни', address: 'Приморський бульвар'),
+    Place(title: 'Підпірні Стіни',
+          address: 'Приморський бульвар'),
     Place(title: 'Готель \"Лондонська\"', address: 'Приморський бульвар, 11'),
     Place(title: 'Палац Гагаріних', address: 'вулиця Ланжиронівська, 2'),
     Place(
