@@ -1,15 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/screens/routes_detail_page.dart';
+import 'package:hackathon/widgets/route_list_item.dart';
+import 'package:hackathon/modules/route.dart' as r;
 
 class RoutesPage extends StatelessWidget {
+  final routes = r.Route.routes;
+
   @override
   Widget build(BuildContext context) {
+    void onRouteTap(r.Route route) {
+      Navigator.pushNamed(
+        context,
+        RouteDetailPage.routeName,
+        arguments: RouteDetailPage(route: route),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Routes'),
       ),
-      body: Container(
-        color: Colors.green,
+      body: ListView.builder(
+        itemCount: routes.length,
+        itemBuilder: (context, index) {
+          return RouteListItem(
+            route: routes[index],
+            onTap: onRouteTap,
+          );
+        },
       ),
     );
   }
 }
+
