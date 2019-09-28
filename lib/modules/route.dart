@@ -1,6 +1,7 @@
+import 'package:hackathon/modules/list_item.dart';
 import 'package:hackathon/modules/place.dart';
 
-class Route {
+class Route implements ListItem {
   String title;
   String description;
   List<Place> places;

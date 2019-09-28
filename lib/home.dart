@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/screens/events_page.dart';
 import 'package:hackathon/screens/news_page.dart';
-import 'package:hackathon/screens/places_page.dart';
+import 'package:hackathon/screens/discover_page.dart';
 import 'package:hackathon/screens/profile_page.dart';
 import 'package:hackathon/screens/routes_page.dart';
 
@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
         index: _currentScreen,
         children: <Widget>[
           NewsPage(),
-          PlacesPage(),
+          DiscoverPage(),
           RoutesPage(),
           EventsPage(),
           ProfilePage(),
@@ -38,15 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentScreen,
         items: [
           BottomNavigationBarItem(
-            title: Text('News'),
-            icon: Icon(Icons.format_list_bulleted),
+            title: Text('Home'),
+            icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title: Text('Places'),
-            icon: Icon(Icons.place),
-          ),
-          BottomNavigationBarItem(
-            title: Text('Routes'),
+            title: Text('Discover'),
             icon: Icon(Icons.map),
           ),
           BottomNavigationBarItem(

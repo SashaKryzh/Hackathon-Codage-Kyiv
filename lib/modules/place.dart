@@ -1,4 +1,6 @@
-class Place {
+import 'package:hackathon/modules/list_item.dart';
+
+class Place implements ListItem {
   String title;
   String description;
   double lat;

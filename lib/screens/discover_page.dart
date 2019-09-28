@@ -2,16 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hackathon/modules/list_item.dart';
 import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
+import 'package:hackathon/screens/routes_detail_page.dart';
 import 'package:hackathon/widgets/place_list_item.dart';
+import 'package:hackathon/modules/route.dart' as r;
 
-class PlacesPage extends StatefulWidget {
+class DiscoverPage extends StatefulWidget {
   @override
-  _PlacesPageState createState() => _PlacesPageState();
+  _DiscoverPageState createState() => _DiscoverPageState();
 }
 
-class _PlacesPageState extends State<PlacesPage> {
+class _DiscoverPageState extends State<DiscoverPage> {
   int _currentScreen = 0;
 
   void onScreenChange() {
@@ -29,7 +32,7 @@ class _PlacesPageState extends State<PlacesPage> {
 
     Widget appBar() {
       return AppBar(
-        title: Text('Places'),
+        title: Text('Discover'),
         leading: IconButton(
           icon: icons[_currentScreen],
           onPressed: onScreenChange,
@@ -41,7 +44,7 @@ class _PlacesPageState extends State<PlacesPage> {
       return IndexedStack(
         index: _currentScreen,
         children: <Widget>[
-          PlacesListView(),
+          DiscoverListView(),
           PlacesMapView(),
         ],
       );
@@ -54,9 +57,15 @@ class _PlacesPageState extends State<PlacesPage> {
   }
 }
 
-class PlacesListView extends StatelessWidget {
+class DiscoverListView extends StatelessWidget {
+  final places = Place.places;
+  final routes = r.Route.routes;
+
   @override
   Widget build(BuildContext context) {
+    var items = List<ListItem>.from(places) + routes;
+    items.shuffle();
+
     void onPlaceTap(Place place) {
       Navigator.pushNamed(
         context,
@@ -64,6 +73,14 @@ class PlacesListView extends StatelessWidget {
         arguments: PlaceDetailPage(
           place: place,
         ),
+      );
+    }
+
+    void onRouteTap(r.Route route) {
+      Navigator.pushNamed(
+        context,
+        RouteDetailPage.routeName,
+        arguments: RouteDetailPage(route: route),
       );
     }
 
