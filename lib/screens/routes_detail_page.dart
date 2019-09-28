@@ -6,11 +6,16 @@ import 'package:hackathon/modules/route.dart' as r;
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
-const _placesTitle = ['Місця'];
+const _routeTour = ['З гідом:'];
+const _routeTourSelf = ['Почати самостійно'];
+
+const _infoTitle = ['Інформація'];
+
+const _placesTitle = ['Місця на маршруті'];
 
 class RouteDetailPage extends StatelessWidget {
   static const String routeName = '/route-detail';
-  
+
   @override
   Widget build(BuildContext context) {
     final route = r.Route.routes.first;
@@ -23,6 +28,33 @@ class RouteDetailPage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.share),
             onPressed: () {},
+          ),
+        ],
+      );
+    }
+
+    Widget buyBlock() {
+      return Column(
+        children: <Widget>[
+          FlatButton(
+            child: Text(_routeTourSelf[currentLanguage]),
+            onPressed: () {},
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Text(_routeTour[currentLanguage]),
+              ),
+              FlatButton(
+                child: Text('250 coins'),
+                onPressed: () {},
+              ),
+              Container(width: 10),
+              RaisedButton(
+                child: Text('300 грн'),
+                onPressed: () {},
+              ),
+            ],
           ),
         ],
       );
@@ -55,10 +87,38 @@ class RouteDetailPage extends StatelessWidget {
           ),
           Divider(),
           HorizontalPadding(
+            child: buyBlock(),
+          ),
+          Divider(),
+          HorizontalPadding(
             child: Text(route.description),
           ),
-          Container(height: 20,),
-          HorizontalPadding(child: BlockTitle(title: _placesTitle[currentLanguage],)),
+          Container(height: 20),
+          HorizontalPadding(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                BlockTitle(
+                  title: _infoTitle[currentLanguage],
+                ),
+                Text(route.duration),
+              ],
+            ),
+          ),
+          Container(height: 20),
+          HorizontalPadding(
+            child: BlockTitle(
+              title: _placesTitle[currentLanguage],
+            ),
+          ),
+          Column(
+            children: route.places.map((i) {
+              return ListTile(
+                title: Text(i.title),
+                leading: Image.asset(i.image),
+              );
+            }).toList(),
+          ),
         ],
       ),
     );

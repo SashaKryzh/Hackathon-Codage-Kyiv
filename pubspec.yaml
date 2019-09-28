@@ -49,6 +49,7 @@ flutter:
     - assets/Anna.jpg
     - assets/events/
     - assets/places/
+    - assets/quests/
     - assets/places/gr/
     - assets/images/Head_of_Minerva.jpg
 

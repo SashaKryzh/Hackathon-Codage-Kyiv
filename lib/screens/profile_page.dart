@@ -158,6 +158,7 @@ class ProfilePage extends StatelessWidget {
                     'Аннушка',
                     style: theme.textTheme.title,
                   ),
+                  // TODO: change
                   Container(
                     child: Text(
                       'kdsjflak\nsdjfljsdfljasdflkjsadlfkjsldkjfsaldjkfsladkjfalsdjkflasdjflasdjfladsjk',

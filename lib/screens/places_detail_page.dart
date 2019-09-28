@@ -172,9 +172,10 @@ class PlaceDetailPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: <Widget>[
-                  Icon(
-                    Icons.info_outline,
-                    size: 50,
+                  Container(
+                    width: 50,
+                    height: 50,
+                    child: Image.asset('assets/wikipedia.jpg'),
                   ),
                   Container(
                     width: 10,
