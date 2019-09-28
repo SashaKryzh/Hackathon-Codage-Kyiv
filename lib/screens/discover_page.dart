@@ -65,8 +65,8 @@ class DiscoverListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: make one specific place and route always on top
-    var items = List<ListItem>.from(places) + routes;
-    items.shuffle();
+    var items = List<ListItem>.from(places);
+    items.insertAll(1, List<ListItem>.from(routes));
 
     void onPlaceTap(Place place) {
       Navigator.pushNamed(

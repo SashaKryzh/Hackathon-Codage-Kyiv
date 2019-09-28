@@ -13,9 +13,36 @@ class EventListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(event.title),
-      subtitle: Text(event.description + ' - ' + event.date.toString()),
+    return GestureDetector(
+      child: Card(
+        child: Column(
+          children: <Widget>[
+            Image.asset(event.image, height: 250, fit: BoxFit.fitWidth,),
+            ListTile(
+              title: Text(event.title),
+              subtitle: Text(event.description),
+              leading: Container(
+                width: 70,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Sep',
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
+                    ),
+                    Text(
+                      '27',
+                      style: TextStyle(fontSize: 27),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       onTap: () => onTap(event),
     );
   }

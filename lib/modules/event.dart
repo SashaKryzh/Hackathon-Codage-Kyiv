@@ -7,7 +7,7 @@ class Event {
   int price;
   int priceFromBonuses;
   String duration;
-  Image image;
+  String image;
 
   Event({
     this.title,
@@ -27,7 +27,7 @@ class Event {
       price: 500,
       priceFromBonuses: 250,
       duration: '5 часов',
-      image: null,
+      image: 'assets/events/french_course.png',
     ),
   ];
 }

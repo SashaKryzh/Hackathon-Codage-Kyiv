@@ -11,10 +11,26 @@ class PlaceListItem extends StatelessWidget {
     this.onTap,
   }) : assert(place != null);
 
+  final description = 'Туди ж він потрапив з знищеного Першого християнського цвинтаря.';
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      
+    final theme = Theme.of(context);
+
+    return GestureDetector(
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            place.image != null ? Image.asset(place.image) : Container(),
+            ListTile(
+              title: Text(place.title, style: theme.textTheme.title,),
+              subtitle: Text(place.description ?? description, maxLines: 2, overflow: TextOverflow.ellipsis,),
+            ),
+          ],
+        ),
+      ),
+      onTap: () => onTap(place),
     );
   }
 }
