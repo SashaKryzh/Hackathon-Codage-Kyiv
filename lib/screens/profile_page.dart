@@ -142,9 +142,14 @@ class ProfilePage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.all(10),
           children: <Widget>[
-            CircleAvatar(
-              backgroundImage: ExactAssetImage('assets/Anna.jpg', ),
-              radius: 80,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircleAvatar(
+                  backgroundImage: ExactAssetImage('assets/Anna.jpg'),
+                  radius: 80,
+                ),
+              ],
             ),
             Center(
               child: Column(

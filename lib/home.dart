@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/screens/events_page.dart';
-import 'package:hackathon/screens/news_page.dart';
+import 'package:hackathon/screens/home_page.dart';
 import 'package:hackathon/screens/discover_page.dart';
 import 'package:hackathon/screens/profile_page.dart';
 import 'package:hackathon/screens/quest_page.dart';
@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: IndexedStack(
         index: _currentScreen,
         children: <Widget>[
-          NewsPage(),
+          HomePage(),
           DiscoverPage(),
           QuestPage(),
           EventsPage(),
