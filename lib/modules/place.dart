@@ -31,87 +31,108 @@ class Place implements ListItem {
         shortDescription: 'Чавунний грифон художнього лиття.',
         description: 'Скульптура міфічної тварини була перенесена в цей сквер у 1960-70-і рр. з Старобазарного (нині Кіровського) скверу. Туди ж він потрапив з знищеного Першого християнського цвинтаря, або з якогось санаторію, який до революції був приватної дачею. Коли - то на місці Кіровського скверу був базар, чотири входи якого охороняли вісім грифонів. З восьми скульптур збереглася лише одна. Однак, краєзнавці стверджують, що встановити точну біографію цієї міфічної істоти вже не представляється можливим.Дана скульптура регулярно піддається актам вандалізму, натхненними міськими легендами і, потім, реставрується владою, внаслідок чого, відбиток мануфактури практично не проглядається.',
         creator: 'мануфактура "Ж.Ж. Дюкель и син"',
-      image: 'assets/places/21.jpg'
+      image: 'assets/places/3.jpg'
     ),
     Place(
       title: 'Будинок Коклена',
-      address: 'провулок Некрасова, 7'
+      address: 'провулок Некрасова, 7',
+        image: 'assets/places/1.jpg'
     ),
     Place(
         title: 'Будинок Оттона',
-        address: 'вулиця  Гоголя, 8'
+        address: 'вулиця  Гоголя, 8',
+        image: 'assets/places/2.jpg'
     ),
     Place(
         title: 'Пам\'ятник Дюку Де Рішельє',
-        address: 'Приморський бульвар, 1'
+        address: 'Приморський бульвар, 1',
+        image: 'assets/places/4.jpg'
     ),
     Place(
         title: 'Підпірні Стіни',
-        address: 'Приморський бульвар'
+        address: 'Приморський бульвар',
+        image: 'assets/places/5.jpg'
     ),
     Place(
         title: 'Готель \"Лондонська\"',
-        address: 'Приморський бульвар, 11'
+        address: 'Приморський бульвар, 11',
+        image: 'assets/places/6.jpg'
     ),
     Place(
         title: 'Палац Гагаріних',
-        address: 'вулиця Ланжиронівська, 2'
+        address: 'вулиця Ланжиронівська, 2',
+        image: 'assets/places/7.jpg'
     ),
     Place(
         title: 'Скульптура-Фонтан \"Молодість\"',
-        address: 'вулиця Ланжиронівська, 4'
+        address: 'вулиця Ланжиронівська, 4',
+        image: 'assets/places/8.jpg'
     ),
     Place(
         title: 'Перший міський театр',
-        address: 'провулок Чайковського'
+        address: 'провулок Чайковського',
+        image: 'assets/places/9.jpg'
     ),
     Place(
         title: 'Комплекс Пале-Рояль',
-        address: 'вулиця Катерининська, 5-13'
+        address: 'вулиця Катерининська, 5-13',
+        image: 'assets/places/10,\ 11.jpg'
     ),
     Place(
         title: 'Будинок Лантье',
-        address: 'вулиця Катерининська, 9'
+        address: 'вулиця Катерининська, 9',
+        image: 'assets/places/10,\ 11.jpg'
+
     ),
     Place(
         title: 'Рішельєвський ліцей',
-        address: 'вулиця Деребасівська, 16'
+        address: 'вулиця Деребасівська, 16',
+        image: 'assets/places/12.jpg'
     ),
     Place(
         title: 'Будинок Жуль\'єна',
-        address: 'вулиця Деребасівська, 19'
+        address: 'вулиця Деребасівська, 19',
+        image: 'assets/places/13.jpg'
     ),
     Place(
         title: 'Будинок Жана Рено',
-        address: 'вулиця Рішел\'євська, 3'
+        address: 'вулиця Рішел\'євська, 3',
+        image: 'assets/places/14.jpg'
     ),
     Place(
         title: 'Будинок Г. Г. Маразлі',
-        address: 'вулиця Пушкінська, 4'
+        address: 'вулиця Пушкінська, 4',
+        image: 'assets/places/15.jpg'
     ),
     Place(
         title: 'Палац Абази',
-        address: 'вулиця Пушкінська, 9'
+        address: 'вулиця Пушкінська, 9',
+        image: 'assets/places/16.jpg'
     ),
     Place(
         title: 'Готель \"Дю Норд\"',
-        address: 'вулиця Пушкінська, 13'
+        address: 'вулиця Пушкінська, 13',
+        image: 'assets/places/17.jpg'
     ),
     Place(
         title: 'Готель Бристоль',
-        address: 'вулиця Пушкінська, 15'
+        address: 'вулиця Пушкінська, 15',
+        image: 'assets/places/18.jpg'
     ),
     Place(
         title: 'Прибутковий Дім',
-        address: 'вулиця Пушкінська, 16'
+        address: 'вулиця Пушкінська, 16',
+        image: 'assets/places/19.jpg'
     ),
     Place(
         title: 'Міст Новікова',
-        address: 'вулиця Жуковського'
+        address: 'вулиця Жуковського',
+        image: 'assets/places/20.jpg'
     ),
     Place(
         title: 'Арка Дачі Ланжерона',
-        address: 'Ланжеронівська площа'
+        address: 'Ланжеронівська площа',
+        image: 'assets/places/21.jpg'
     ),
   ];
   static List<Place> placesFr = [
