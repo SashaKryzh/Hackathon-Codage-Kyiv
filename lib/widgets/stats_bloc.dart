@@ -4,12 +4,12 @@ import 'package:hackathon/main.dart';
 
 const _rank = [
   'Рівень',
-  '!',
+  'Le niveau',
 ];
 
 const _events = [
   'Події',
-  '!',
+  'Les événements',
 ];
 
 class StatsBlock extends StatelessWidget {
@@ -25,7 +25,10 @@ class StatsBlock extends StatelessWidget {
               child: icon,
             ),
             Text(title),
-            Text(data),
+            Text(
+              data,
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       );

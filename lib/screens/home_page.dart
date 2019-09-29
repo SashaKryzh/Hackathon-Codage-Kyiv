@@ -16,10 +16,10 @@ import 'package:hackathon/widgets/route_list_item.dart';
 import 'package:hackathon/widgets/stats_bloc.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-const questProgress = ['Пройдено квестів', '',];
+const questProgress = ['Пройдено квестів', 'Les questes passée',];
 
 class HomePage extends StatelessWidget {
-  static const pageTitle = ['Головна', ''];
+  static const pageTitle = ['Головна', 'La page principale'];
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ import 'package:hackathon/widgets/route_list_item.dart';
 
 
 class DiscoverPage extends StatefulWidget {
-  static const pageTitle = ['Місця і Тури', ''];
+  static const pageTitle = ['Місця і Тури', 'Des lieux et des tours'];
 
   @override
   _DiscoverPageState createState() => _DiscoverPageState();

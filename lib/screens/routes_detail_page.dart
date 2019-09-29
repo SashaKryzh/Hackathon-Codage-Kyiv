@@ -7,12 +7,12 @@ import 'package:hackathon/modules/route.dart' as r;
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
-const _routeTour = ['З гідом:', '',];
-const _routeTourSelf = ['Почати самостійно', '',];
+const _routeTour = ['З гідом:', 'Avec votre guide',];
+const _routeTourSelf = ['Почати самостійно', 'Commencer indépandement',];
 
-const _infoTitle = ['Інформація', '',];
+const _infoTitle = ['Інформація', '\'L\' information',];
 
-const _placesTitle = ['Місця на маршруті', '',];
+const _placesTitle = ['Місця на маршруті', 'Des lieux sur le circuit',];
 
 class RouteDetailPage extends StatelessWidget {
   static const String routeName = '/route-detail';

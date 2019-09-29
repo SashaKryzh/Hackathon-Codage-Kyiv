@@ -1,7 +1,7 @@
-const List<String> userName = ['Аннушка', ''];
+const List<String> userName = ['Аннушка', 'Anna'];
 
-const List<String> commentOnPost = ['Моє улюбленне місце!', ''];
+const List<String> commentOnPost = ['Моє улюбленне місце!', 'Ma place préférée!'];
 
-const reviews = ['Відгуки', ''];
+const reviews = ['Відгуки', 'Les commentaires'];
 
 const coinsName = 'TRC';

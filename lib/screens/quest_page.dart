@@ -10,7 +10,7 @@ import 'package:hackathon/modules/route.dart' as r;
 class QuestPage extends StatelessWidget {
   final quests = Quest.quests[currentLanguage];
 
-  static const pageTitle = ['Квести', ''];
+  static const pageTitle = ['Квести', 'Les quests'];
 
   @override
   Widget build(BuildContext context) {

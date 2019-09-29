@@ -8,11 +8,32 @@ import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
-const _grLegend = ['Давние и седые мифы гласят о том, что грифон является хранителем сокровищ. И что еще древние цари прятали в их статуи свои богатства. Хоть одесский гриффон и переехал в уголок старой Одессы со Старобазарной площади и не имеет отношения к царям, авантюристы во все времена верили, что хитрые купцы что-то да припрятали. Отсюда, дамы и господа, вечные пробоины в плече гриффона. (Ох, я крайне надеюсь, что к Вашему приходу городская управа уже отремонтировала бедную зверюшку).', ''];
+const _grLegend = [
+  'Давні і сиві міфи свідчать про те, що грифон є хранителем скарбів. І що ще стародавні царі ховали в їх статуї свої багатства. Хоч одеський гриффон і переїхав в куточок старої Одеси зі Старобазарний площі і не має відношення до царів, авантюристи в усі часи вірили, що хитрі купці щось та приховали. Звідси, пані та панове, вічні пробоїни в плечі гриффона. (Ох, я вкрай сподіваюся, що до Вашого приходу міська управа вже відремонтувала бідну тваринку).',
+  'Les mythes anciens disent que le griffon est le gardien des trésors. Et que même les anciens rois cachaient leurs richesses dans leurs statues. Bien que le Griffon d’Odessa ait déménagé dans un coin de la vieille ville d’ Odessa depuis la place Starobazarnaya et n\'ait rien à voir avec les rois, mais les aventuriers ont toujours cru que des marchands rusés avaient caché quelque chose. Par conséquent, Mesdames et Messieurs,  ce pourquoi il y a des trous éternels dans l\'épaule du griffon qui ont été  fait par les chercheurs de  trésors. (Oh, j\'espère vraiment que d\'ici votre arrivée, le gouvernement de la ville aura déjà soigné le pauvre animal).'
+];
 
 // TODO: translate to Ukraine
 class PlaceDetailPage extends StatelessWidget {
   static const String routeName = '/place-detail';
+
+  static const text1 = [
+    'Туди ж він потрапив з знищеного Першого християнського цвинтаря, або з якогось санаторію, який до революції був приватної дачею.',
+    'C\' est dans les années 1960-70 que cette sculpture représentant une créature mythique a été installée à son emplacement actuel.',
+  ];
+  static const text2 = [
+    'Коли - то на місці Кіровського скверу був базар, чотири входи якого охороняли вісім грифонів. З восьми скульптур збереглася лише одна. Однак, краєзнавці стверджують, що встановити точну біографію цієї міфічної істоти вже не представляється можливим.',
+    'Elle aurait été trouvée soit dans le Premier cimetière chrétien qui a été détruit soit d\' un sanatorium qui était une maison de campagne privée avant  la révolution. Jadis elle se trouvait auparavant dans le square Starobazarny (maintenant le square Kirovsky), lieu où se situait un grand marché dont quatre entrées étaient gardées par huit griffons. Sur les huit sculptures seulement une existe encore. Cependant, des ethnographes régionaux ont assurés qu\' il n\' est pas possible de fixer la biographie exacte de cet animal mythique.',
+  ];
+  static const text3 = [
+    'Дана скульптура регулярно піддається актам вандалізму, натхненними міськими легендами і, потім, реставрується владою, внаслідок чого, відбиток мануфактури практично не проглядається.',
+    'Cette sculpture fait régulièrement l\'objet d\'acte de vandalisme, qui sont inspirés par les légendes urbaines. Puis elle est restaurée par les corps de ville. C\' est pourquoi l\' empreinte de manufacture n\'est presque  pas remarquable.',
+  ];
+
+  static const cityLegendTitle = [
+    'Міська легенда',
+    'Le mythe urbain'
+  ];
 
   Completer<GoogleMapController> _controller = Completer();
 
@@ -111,8 +132,7 @@ class PlaceDetailPage extends StatelessWidget {
 //            child: BlockTitle(title: 'Description'),
 //          ),
           HorizontalPadding(
-            child: Text(
-                'Скульптура мифического животного была перенесена в этот сквер в 1960-70-х годах из Старобазарного (ныне Кировского) сквера. Туда же он попал либо с уничтоженного Первого христианского кладбища, либо из какого-то санатория, который до революции был частной дачей.'),
+            child: Text(text1[currentLanguage]),
           ),
           Container(
             height: 20,
@@ -127,7 +147,7 @@ class PlaceDetailPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text('Городская легенда!',
+                      Text(cityLegendTitle[currentLanguage],
                           style: theme.textTheme.headline),
                       Text(_grLegend[currentLanguage]),
                     ],
@@ -138,21 +158,19 @@ class PlaceDetailPage extends StatelessWidget {
             ),
           ),
           HorizontalPadding(
-            child: Text(
-                'Когда - то на месте Кировского сквера был базар, четыре входа которого охраняли восемь грифонов. Из восьми скульптур сохранилась лишь одна. Однако, краеведы утверждают, что установить точную биографию этого мифического существа уже не представляется возможным.'),
+            child: Text(text2[currentLanguage]),
           ),
           Container(height: 20),
           Image.asset('assets/places/gr/32.jpg'),
           Container(height: 20),
           HorizontalPadding(
-            child: Text(
-                'Данная скульптура регулярно подвергается актам вандализма, вдохновленными городскими легендами и, затем, реставрируется властями, вследствии чего, оттиск мануфактуры практически не просматривается.'),
+            child: Text(text3[currentLanguage]),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Divider(),
           ),
-          HorizontalPadding(child: Text('Місцезнаходження: ${p.address}')),
+          HorizontalPadding(child: Text('${p.address}')),
           Container(
             height: 250,
             child: Card(

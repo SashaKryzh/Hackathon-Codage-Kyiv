@@ -4,7 +4,7 @@ import 'package:hackathon/modules/event.dart';
 import 'package:hackathon/widgets/event_list_item.dart';
 
 class EventsPage extends StatelessWidget {
-  static const pageTitle = ['Події', ''];
+  static const pageTitle = ['Події', 'Des événements'];
 
   @override
   Widget build(BuildContext context) {

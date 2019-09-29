@@ -13,12 +13,12 @@ const _about = [
 
 const _achievement = [
   'Досягнення',
-  '!',
+  'Les progres',
 ];
 
 const _quest = [
   'Квести',
-  '!',
+  'Les quests',
 ];
 
 class ProfilePage extends StatelessWidget {
@@ -26,7 +26,7 @@ class ProfilePage extends StatelessWidget {
 
   static const pageTitle = [
     'Профіль',
-    '!',
+    'Le profil',
   ];
 
   @override
@@ -168,7 +168,7 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text(
-                    'Аннушка',
+                    userName[currentLanguage],
                     style: theme.textTheme.title,
                   ),
                   // TODO: change

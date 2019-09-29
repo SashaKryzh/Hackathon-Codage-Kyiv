@@ -135,8 +135,9 @@ class Place implements ListItem {
   ];
 
   static List<Place> placesFr = [
+    // TODO: translate
     Place(
-        title: '!Скульптура \"Грифон\"',
+        title: 'La sculpture du “Griffon”',
         address: 'вулиця Гоголя, 1',
         shortDescription: 'Чавунний грифон художнього лиття.',
         description:
@@ -146,33 +147,33 @@ class Place implements ListItem {
         lat: 46.490223,
         lng: 30.735547),
     Place(
-        title: '!Перший міський театр',
+        title: 'Le premier théâtre de la ville',
         address: 'провулок Чайковського',
         image: 'assets/places/9.jpg',
         lat: 46.4844979,
         lng: 30.7304077),
     Place(
-        title: 'Комплекс Пале-Рояль',
+        title: 'Galeries du Palais Royale',
         address: 'вулиця Катерининська, 5-13',
         image: 'assets/places/10,\ 11.jpg',
         lat: 46.4844979,
         lng: 30.7304077),
     Place(
-        title: '!Рішельєвський ліцей',
+        title: 'Lycée Richelieu',
         address: 'вулиця Деребасівська, 16',
         image: 'assets/places/12.jpg'),
     Place(
-        title: 'Арка Дачі Ланжерона',
+        title: 'L’ arche de la datcha de Langeron',
         address: 'Ланжеронівська площа',
         image: 'assets/places/21.jpg'),
     Place(
-        title: 'Будинок Коклена',
+        title: 'Maison de Coquelin',
         address: 'провулок Некрасова, 7',
         image: 'assets/places/1.jpg',
         lat: 46.488982,
         lng: 30.733927),
     Place(
-      title: 'Пам\'ятник Дюку Де Рішельє',
+      title: 'Monument au duc de Richeleu',
       address: 'Приморський бульвар, 1',
       image: 'assets/places/4.jpg',
       lat: 46.489506,

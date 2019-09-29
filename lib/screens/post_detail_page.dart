@@ -29,7 +29,7 @@ const _text4 = [
 
 const _comment = [
   'Молодці!',
-  '!',
+  'Bravo!',
 ];
 
 // TODO: make post likeable for the joke

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/place.dart';
 
 // TODO: make cool
@@ -11,7 +12,7 @@ class PlaceListItem extends StatelessWidget {
     this.onTap,
   }) : assert(place != null);
 
-  final description = 'Туди ж він потрапив з знищеного Першого християнського цвинтаря.';
+  final description = ['Туди ж він потрапив з знищеного Першого християнського цвинтаря.', 'Membres de l\'équipe: Sandra Zadorozhnaya, Evgeny Fedorich, Alexander Krijanovski'];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class PlaceListItem extends StatelessWidget {
                 : Container(),
             ListTile(
               title: Text(place.title, style: theme.textTheme.title,),
-              subtitle: Text(place.shortDescription ?? description, maxLines: 2, overflow: TextOverflow.ellipsis,),
+              subtitle: Text(place.shortDescription ?? description[currentLanguage], maxLines: 2, overflow: TextOverflow.ellipsis,),
             ),
           ],
         ),
