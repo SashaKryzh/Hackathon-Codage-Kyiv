@@ -8,7 +8,7 @@ class EventsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final events = Event.events;
+    final events = Event.events[currentLanguage];
 
     // TODO: implement navigation
     void onEventTap(Event event) {

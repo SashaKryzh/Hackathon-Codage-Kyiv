@@ -33,14 +33,21 @@ class RouteDetailPage extends StatelessWidget {
         ],
       );
     }
+    
+    void startRoute() {
+      Navigator.pushNamed(context, routeName);
+    }
 
     Widget buyBlock() {
       return Column(
         children: <Widget>[
-          FlatButton(
-            child: Text(_routeTourSelf[currentLanguage]),
+          RaisedButton(
+            child: Text(_routeTourSelf[currentLanguage], style: TextStyle(color: Colors.white, fontSize: 25),),
+            color: Colors.green,
+            padding: EdgeInsets.all(20),
             onPressed: () {},
           ),
+          Container(height: 20),
           Row(
             children: <Widget>[
               Expanded(
