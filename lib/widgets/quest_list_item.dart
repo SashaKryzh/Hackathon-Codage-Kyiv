@@ -43,7 +43,7 @@ class QuestListItem extends StatelessWidget {
                   height: 10,
                 ),
                 LinearPercentIndicator(
-                  width: 300,
+                  width: 200,
                   animation: true,
                   lineHeight: 15.0,
                   animationDuration: 2000,

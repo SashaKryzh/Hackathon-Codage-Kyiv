@@ -3,6 +3,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hackathon/consts.dart';
 import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/achievement.dart';
+import 'package:hackathon/modules/quest.dart';
+import 'package:hackathon/widgets/quest_list_item.dart';
 import 'package:hackathon/widgets/stats_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -79,60 +81,58 @@ class ProfilePage extends StatelessWidget {
           ),
           TableRow(
             children: [
-              achievementItem(as[0]),
-              achievementItem(as[1]),
-              achievementItem(as[2]),
+              achievementItem(as[3]),
+              achievementItem(as[4]),
+              achievementItem(as[5]),
             ],
           ),
         ],
       );
     }
 
-    Widget questBlock(
-        IconData icon, String title, String description, double progress) {
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Icon(icon, size: 78),
-          Container(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                title,
-                style: theme.textTheme.title,
-              ),
-              Container(
-                height: 3,
-              ),
-              Text(
-                description,
-                style: theme.textTheme.subtitle,
-              ),
-              Container(
-                height: 10,
-              ),
-              LinearPercentIndicator(
-                width: 300,
-                animation: true,
-                lineHeight: 15.0,
-                animationDuration: 2000,
-                percent: progress,
-//                center: Text("90.0%"),
-                linearStrokeCap: LinearStrokeCap.roundAll,
-                progressColor: Colors.greenAccent,
-              ),
-            ],
-          ),
-        ],
-      );
-    }
+//    Widget questBlock(Quest quest) {
+//      return Row(
+//        crossAxisAlignment: CrossAxisAlignment.center,
+//        children: <Widget>[
+//          Icon(icon, size: 78),
+//          Container(width: 10),
+//          Column(
+//            crossAxisAlignment: CrossAxisAlignment.start,
+//            children: <Widget>[
+//              Text(
+//                title,
+//                style: theme.textTheme.title,
+//              ),
+//              Container(
+//                height: 3,
+//              ),
+//              Text(
+//                description,
+//                style: theme.textTheme.subtitle,
+//              ),
+//              Container(
+//                height: 10,
+//              ),
+//              LinearPercentIndicator(
+//                width: 300,
+//                animation: true,
+//                lineHeight: 15.0,
+//                animationDuration: 2000,
+//                percent: progress,
+////                center: Text("90.0%"),
+//                linearStrokeCap: LinearStrokeCap.roundAll,
+//                progressColor: Colors.greenAccent,
+//              ),
+//            ],
+//          ),
+//        ],
+//      );
+//    }
 
     Widget questsBlock() {
       return Column(
         children: <Widget>[
-          questBlock(Icons.high_quality, 'quest',
-              'desldkjflsd flksd vdknf m3 34 t4', 0.4),
+          QuestListItem(quest: Quest.quests[currentLanguage][2]),
         ],
       );
     }

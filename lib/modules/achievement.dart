@@ -12,37 +12,37 @@ class Achievement {
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.bug_report,
       completed: false,
     ),
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.audiotrack,
       completed: false,
     ),
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.compare,
       completed: false,
     ),
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.sentiment_satisfied,
       completed: false,
     ),
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.public,
       completed: false,
     ),
     Achievement(
       title: 'Title',
       description: 'Description',
-      iconData: Icons.headset,
+      iconData: Icons.queue_music,
       completed: false,
     ),
   ];
