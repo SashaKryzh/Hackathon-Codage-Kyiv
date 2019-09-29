@@ -19,14 +19,14 @@ class Route implements ListItem {
     this.places,
   });
 
-  static List<Route> routes = [
+  static List<Route> routesUA = [
     Route(
       title: 'Слідами Франції',
       shortDescription: 'Це унікальна екскурсія в якій Вам не потрібен екскурсовод!',
       description: 'Це унікальна екскурсія в якій Вам не потрібен екскурсовод! Прогулянка по архітектурним пам\'яткам в супроводі електронного гіда і нової квест-програми. Ніяких нудних монологів, тільки інтерактив, соковиті кадри і приємні бонуси. Екскурсія познайомить Вас з цікавими історіями і міськими легендами, а також дозволить заробити бали для програми лояльності \"Франція в серці\" *. Отже, вперед до знижок і вражень!',
       duration: 'Тривалість 3 години.',
       image: 'assets/route.png',
-      places: Place.places,
+      places: Place.placesUA,
     ),
   ];
 
@@ -40,4 +40,6 @@ class Route implements ListItem {
       places: Place.placesFr,
     ),
   ];
+
+  static var routes = [routesUA, routesFr];
 }

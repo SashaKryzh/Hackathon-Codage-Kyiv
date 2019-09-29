@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hackathon/consts.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
@@ -13,7 +14,6 @@ const _grLegend = ['Давние и седые мифы гласят о том, 
 class PlaceDetailPage extends StatelessWidget {
   static const String routeName = '/place-detail';
 
-  final p = Place.places.first;
   Completer<GoogleMapController> _controller = Completer();
 
   void onMapCreated(GoogleMapController controller) {
@@ -33,6 +33,7 @@ class PlaceDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    var p = Place.places[currentLanguage].first;
 
     final CameraPosition _cameraPosition = CameraPosition(
       target: LatLng(46.4904006, 30.7354182),
@@ -192,7 +193,7 @@ class PlaceDetailPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
-                BlockTitle(title: 'Reviews'),
+                BlockTitle(title: reviews[currentLanguage]),
                 Card(
                   child: ListTile(
                     title: Text(userName[currentLanguage]),

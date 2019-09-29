@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/screens/events_page.dart';
 import 'package:hackathon/screens/home_page.dart';
 import 'package:hackathon/screens/discover_page.dart';
@@ -39,23 +40,23 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentScreen,
         items: [
           BottomNavigationBarItem(
-            title: Text('Home'),
+            title: Text(HomePage.pageTitle[currentLanguage]),
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title: Text('Discover'),
+            title: Text(DiscoverPage.pageTitle[currentLanguage]),
             icon: Icon(Icons.map),
           ),
           BottomNavigationBarItem(
-            title: Text('Quests'),
+            title: Text(QuestPage.pageTitle[currentLanguage]),
             icon: Icon(Icons.border_color),
           ),
           BottomNavigationBarItem(
-            title: Text('Events'),
+            title: Text(EventsPage.pageTitle[currentLanguage]),
             icon: Icon(Icons.event),
           ),
           BottomNavigationBarItem(
-            title: Text('Profile'),
+            title: Text(ProfilePage.pageTitle[currentLanguage]),
             icon: Icon(Icons.account_circle),
           ),
         ],

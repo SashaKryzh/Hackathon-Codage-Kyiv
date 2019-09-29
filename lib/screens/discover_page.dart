@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/list_item.dart';
 import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
@@ -10,7 +11,10 @@ import 'package:hackathon/widgets/place_list_item.dart';
 import 'package:hackathon/modules/route.dart' as r;
 import 'package:hackathon/widgets/route_list_item.dart';
 
+
 class DiscoverPage extends StatefulWidget {
+  static const pageTitle = ['Місця і Тури', ''];
+
   @override
   _DiscoverPageState createState() => _DiscoverPageState();
 }
@@ -33,7 +37,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
 
     Widget appBar() {
       return AppBar(
-        title: Text('Discover'),
+        title: Text(DiscoverPage.pageTitle[currentLanguage]),
         leading: IconButton(
           icon: icons[_currentScreen],
           onPressed: onScreenChange,
@@ -65,8 +69,8 @@ class DiscoverListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: make one specific place and route always on top
-    var items = List<ListItem>.from(places);
-    items.insertAll(1, List<ListItem>.from(routes));
+    var items = List<ListItem>.from(places[currentLanguage]);
+    items.insertAll(1, List<ListItem>.from(routes[currentLanguage]));
 
     void onPlaceTap(Place place) {
       Navigator.pushNamed(
@@ -140,7 +144,7 @@ class _PlacesMapViewState extends State<PlacesMapView> {
   }
 
   void initMarkers() {
-    _markers = Place.places.map((i) {
+    _markers = Place.places[currentLanguage].map((i) {
       return Marker(
         markerId: MarkerId('1'),
         position: i.lng != null ? LatLng(i.lat, i.lng) : LatLng(46.4836981, 30.7362512),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/event.dart';
 import 'package:hackathon/widgets/event_list_item.dart';
 
 class EventsPage extends StatelessWidget {
+  static const pageTitle = ['Події', ''];
+
   @override
   Widget build(BuildContext context) {
     final events = Event.events;
@@ -14,7 +17,7 @@ class EventsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Events'),
+        title: Text(pageTitle[currentLanguage]),
       ),
       body: ListView.builder(
         itemCount: events.length,

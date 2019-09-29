@@ -1,15 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hackathon/consts.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/achievement.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
+const _rank = [
+  'Рівень',
+  '!',
+];
+
+const _events = [
+  'Події',
+  '!',
+];
 
 const _about = [
   'ілвоад діволаділо віоад овіалоє',
   '',
 ];
 
+const _achievement = [
+  'Досягнення',
+  '!',
+];
+
+const _quest = [
+  'Квести',
+  '!',
+];
+
 class ProfilePage extends StatelessWidget {
+  static const routeName = '/profile-page';
+
+  static const pageTitle = [
+    'Профіль',
+    '!',
+  ];
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -136,12 +164,16 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text(pageTitle[currentLanguage]),
         actions: <Widget>[
+          IconButton(
+            icon: currentLanguage == 0 ? Image.asset('assets/ukraine_flag.png') : Image.asset('assets/frenche_flag.png'),
+            onPressed: changeLanguage,
+          ),
           IconButton(
             icon: Icon(Icons.edit),
             onPressed: () {},
-          )
+          ),
         ],
       ),
       body: Center(
@@ -180,26 +212,26 @@ class ProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 statsBlock(
-                  'Coins',
                   '579',
+                  coinsName,
                   Icon(Icons.monetization_on),
                 ),
                 statsBlock(
-                  'Rank',
                   '12',
+                  _rank[currentLanguage],
                   Icon(Icons.arrow_upward),
                 ),
                 statsBlock(
-                  'Events',
                   '3',
+                  _events[currentLanguage],
                   Icon(Icons.event_available),
                 ),
               ],
             ),
             Container(height: 20),
-            blockTitle('Achievements'),
+            blockTitle(_achievement[currentLanguage]),
             achievementsBlock(),
-            blockTitle('Quests'),
+            blockTitle(_quest[currentLanguage]),
             questsBlock(),
           ],
         ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/event.dart';
 import 'package:hackathon/modules/list_item.dart';
 import 'package:hackathon/modules/place.dart';
 import 'package:hackathon/modules/post.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
 import 'package:hackathon/screens/post_detail_page.dart';
+import 'package:hackathon/screens/profile_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 import 'package:hackathon/widgets/event_list_item.dart';
 import 'package:hackathon/widgets/place_list_item.dart';
@@ -13,9 +15,11 @@ import 'package:hackathon/widgets/post_list_item.dart';
 import 'package:hackathon/widgets/route_list_item.dart';
 
 class HomePage extends StatelessWidget {
+  static const pageTitle = ['Головна', ''];
+
   @override
   Widget build(BuildContext context) {
-    final List<ListItem> items = Post.posts;
+    final List<ListItem> items = Post.posts[currentLanguage];
 
     void onPlaceTap(Place place) {
       Navigator.pushNamed(
@@ -42,9 +46,19 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    void routeToProfile() {
+      Navigator.pushNamed(context, ProfilePage.routeName);
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text(pageTitle[currentLanguage]),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.account_circle),
+            onPressed: routeToProfile,
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: items.length,

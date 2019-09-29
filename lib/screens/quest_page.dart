@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/quest.dart';
 import 'package:hackathon/screens/quest_detail_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
@@ -7,7 +8,9 @@ import 'package:hackathon/widgets/route_list_item.dart';
 import 'package:hackathon/modules/route.dart' as r;
 
 class QuestPage extends StatelessWidget {
-  final quests = Quest.quests;
+  final quests = Quest.quests[currentLanguage];
+
+  static const pageTitle = ['Квести', ''];
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class QuestPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quests'),
+        title: Text(pageTitle[currentLanguage]),
       ),
       body: ListView.builder(
         itemCount: quests.length,

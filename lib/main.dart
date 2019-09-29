@@ -2,14 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:hackathon/home.dart';
 import 'package:hackathon/screens/places_detail_page.dart';
 import 'package:hackathon/screens/post_detail_page.dart';
+import 'package:hackathon/screens/profile_page.dart';
 import 'package:hackathon/screens/quest_detail_page.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+Function() changeLanguage;
+int currentLanguage = 0;
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  void changeLanguageMyApp() {
+    setState(() {
+      currentLanguage = (currentLanguage + 1) % 2;
+    });
+    print(currentLanguage);
+  }
+
   @override
   Widget build(BuildContext context) {
+    changeLanguage = changeLanguageMyApp;
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -43,6 +61,11 @@ Route onGenerateRoute(RouteSettings settings) {
     case PostDetailPage.routeName:
       return MaterialPageRoute(
         builder: (context) => PostDetailPage(),
+      );
+
+    case ProfilePage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => ProfilePage(),
       );
 
     default:

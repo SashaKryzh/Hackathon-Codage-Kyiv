@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/consts.dart';
+import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/place.dart';
 
 import 'package:hackathon/modules/route.dart' as r;
@@ -18,7 +19,7 @@ class RouteDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final route = r.Route.routes.first;
+    final route = r.Route.routes[currentLanguage].first;
     final theme = Theme.of(context);
 
     Widget appBar() {
@@ -46,7 +47,7 @@ class RouteDetailPage extends StatelessWidget {
                 child: Text(_routeTour[currentLanguage]),
               ),
               FlatButton(
-                child: Text('250 coins'),
+                child: Text('250 ' + coinsName),
                 onPressed: () {},
               ),
               Container(width: 10),
