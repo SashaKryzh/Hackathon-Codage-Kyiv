@@ -13,7 +13,7 @@ const _about = [
 
 const _achievement = [
   'Досягнення',
-  'Les progres',
+  'Les défis',
 ];
 
 const _quest = [

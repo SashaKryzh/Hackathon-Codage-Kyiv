@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hackathon/consts.dart';
@@ -14,7 +16,7 @@ const _grLegend = [
 ];
 
 // TODO: translate to Ukraine
-class PlaceDetailPage extends StatelessWidget {
+class PlaceDetailPage extends StatefulWidget {
   static const String routeName = '/place-detail';
 
   static const text1 = [
@@ -35,6 +37,18 @@ class PlaceDetailPage extends StatelessWidget {
     'Le mythe urbain'
   ];
 
+  final Place place;
+
+  PlaceDetailPage({
+    this.place,
+  }) : assert(place != null);
+
+
+  @override
+  _PlaceDetailPageState createState() => _PlaceDetailPageState();
+}
+
+class _PlaceDetailPageState extends State<PlaceDetailPage> {
   Completer<GoogleMapController> _controller = Completer();
 
   void onMapCreated(GoogleMapController controller) {
@@ -43,13 +57,30 @@ class PlaceDetailPage extends StatelessWidget {
     }
   }
 
+  final player = AudioCache();
+  @override
+  void initState() {
+    player.load('audio.mp3');
+    super.initState();
+  }
+
   var _currentMapType = MapType.normal;
 
-  final Place place;
+  bool isPlaying = false;
+  void stopAudio() {
+    a.stop();
+    setState(() {
+      isPlaying = false;
+    });
+  }
 
-  PlaceDetailPage({
-    this.place,
-  }) : assert(place != null);
+  AudioPlayer a;
+  Future playAudio() async {
+    a = await player.play('audio.mp3');
+    setState(() {
+      isPlaying = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,9 +147,12 @@ class PlaceDetailPage extends StatelessWidget {
                 icon: Icon(Icons.check_circle_outline),
                 onPressed: () {},
               ),
-              IconButton(
+              isPlaying == false ? IconButton(
                 icon: Icon(Icons.play_circle_outline),
-                onPressed: () {},
+                onPressed: playAudio,
+              ) : IconButton(
+                icon: Icon(Icons.stop),
+                onPressed: stopAudio,
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border),
@@ -132,7 +166,7 @@ class PlaceDetailPage extends StatelessWidget {
 //            child: BlockTitle(title: 'Description'),
 //          ),
           HorizontalPadding(
-            child: Text(text1[currentLanguage]),
+            child: Text(PlaceDetailPage.text1[currentLanguage]),
           ),
           Container(
             height: 20,
@@ -147,7 +181,7 @@ class PlaceDetailPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(cityLegendTitle[currentLanguage],
+                      Text(PlaceDetailPage.cityLegendTitle[currentLanguage],
                           style: theme.textTheme.headline),
                       Text(_grLegend[currentLanguage]),
                     ],
@@ -158,13 +192,13 @@ class PlaceDetailPage extends StatelessWidget {
             ),
           ),
           HorizontalPadding(
-            child: Text(text2[currentLanguage]),
+            child: Text(PlaceDetailPage.text2[currentLanguage]),
           ),
           Container(height: 20),
           Image.asset('assets/places/gr/32.jpg'),
           Container(height: 20),
           HorizontalPadding(
-            child: Text(text3[currentLanguage]),
+            child: Text(PlaceDetailPage.text3[currentLanguage]),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
