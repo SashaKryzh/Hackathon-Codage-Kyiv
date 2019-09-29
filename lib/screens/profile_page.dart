@@ -3,17 +3,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hackathon/consts.dart';
 import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/achievement.dart';
+import 'package:hackathon/widgets/stats_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
-const _rank = [
-  'Рівень',
-  '!',
-];
-
-const _events = [
-  'Події',
-  '!',
-];
 
 const _about = [
   'ілвоад діволаділо віоад овіалоє',
@@ -94,22 +85,6 @@ class ProfilePage extends StatelessWidget {
             ],
           ),
         ],
-      );
-    }
-
-    Widget statsBlock(String title, String data, Icon icon) {
-      return Container(
-        width: 90,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: icon,
-            ),
-            Text(title),
-            Text(data),
-          ],
-        ),
       );
     }
 
@@ -208,26 +183,7 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Container(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                statsBlock(
-                  '579',
-                  coinsName,
-                  Icon(Icons.monetization_on),
-                ),
-                statsBlock(
-                  '12',
-                  _rank[currentLanguage],
-                  Icon(Icons.arrow_upward),
-                ),
-                statsBlock(
-                  '3',
-                  _events[currentLanguage],
-                  Icon(Icons.event_available),
-                ),
-              ],
-            ),
+            StatsBlock(),
             Container(height: 20),
             blockTitle(_achievement[currentLanguage]),
             achievementsBlock(),

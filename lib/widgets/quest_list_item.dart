@@ -22,7 +22,7 @@ class QuestListItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Icon(quest.icon, size: 78),
+          Container(child: Image.asset(quest.image), height: 70, width: 70),
           Container(width: 10),
           Expanded(
             child: Column(

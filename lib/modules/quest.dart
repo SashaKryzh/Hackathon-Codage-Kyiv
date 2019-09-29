@@ -5,13 +5,13 @@ class Quest implements ListItem {
   String title;
   String description;
   double percent;
-  IconData icon;
+  String image;
 
   Quest({
     this.title,
     this.description,
     this.percent,
-    this.icon,
+    this.image,
   });
 
   static List<Quest> questsUA = [
@@ -19,76 +19,76 @@ class Quest implements ListItem {
       title: 'Одеський цар звірів',
       description: 'Сфотографувати 10 левів у Одесі.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/1.jpg',
     ),
     Quest(
       title: 'Масоны в Одессе',
       description: 'Сфотографировать знаки масонов на зданиях (циркуль, маятник, полусфера, женское лицо с петлёй на шее).',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/2.png',
     ),
     Quest(
       title: 'Колодцы старой одессы',
       description: 'Сфотографировать 5 колодцев.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/3.jpg',
     ),
     Quest(
       title: 'Украденные скульптуры',
       description: 'Сфотографировать скульптуры и фонтаны, бывшие ранее в резиденциях знати.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/4.jpg',
     ),
     Quest(
       title: 'Лестница в море',
       description: 'Сфотографироваться на верхней и нижней ступенях Потёмкинской лестницы.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/5.jpg',
     ),
     Quest(
       title: 'Одесса на плечах Атлантов',
       description: 'Сфотографировать 4 скульптуры Атлантов в Одессе.',
       percent: 1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/6.jpg',
     ),
   ];
 
   static List<Quest> questsFr = [
     Quest(
-      title: 'Одеський цар звірів',
-      description: 'Сфотографувати 10 левів у Одесі.',
+      title: 'Le roi des animaux à Odessa',
+      description: 'Prenez des photos de 10 lions à Odessa.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/1.jpg',
     ),
     Quest(
-      title: 'Масоны в Одессе',
-      description: 'Сфотографировать знаки масонов на зданиях (циркуль, маятник, полусфера, женское лицо с петлёй на шее).',
+      title: 'Des maçons à Odessa',
+      description: 'Prenez des photos des signes de maçons sur les bâtiments (compas, pendule, hémisphère, visage de femme avec un nœud coulant autour du cou).',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/2.png',
     ),
     Quest(
-      title: 'Колодцы старой одессы',
-      description: 'Сфотографировать 5 колодцев.',
+      title: 'Les puits de la vieille Odessa',
+      description: 'Prenez  des photos de 5 puits.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/3.jpg',
     ),
     Quest(
-      title: 'Украденные скульптуры',
-      description: 'Сфотографировать скульптуры и фонтаны, бывшие ранее в резиденциях знати.',
+      title: 'Sculptures volées',
+      description: 'Prenez des photos de sculptures et de fontaines qui étaient volés de résidences de la noblesse.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/4.jpg',
     ),
     Quest(
-      title: 'Лестница в море',
-      description: 'Сфотографироваться на верхней и нижней ступенях Потёмкинской лестницы.',
+      title: 'L’escalier à la mer',
+      description: 'Prenez des photos sur les marches supérieure et inférieure de l\'escalier Potemkin.',
       percent: 0.1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/5.jpg',
     ),
     Quest(
-      title: 'Одесса на плечах Атлантов',
-      description: 'Сфотографировать 4 скульптуры Атлантов в Одессе.',
+      title: 'Odessa sur les épaules des Atlantes',
+      description: 'Prenez des photos 4 sculptures d\'Atlantes à Odessa.',
       percent: 1,
-      icon: Icons.ac_unit,
+      image: 'assets/quests/6.jpg',
     ),
   ];
 

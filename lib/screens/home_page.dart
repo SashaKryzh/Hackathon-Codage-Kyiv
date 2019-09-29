@@ -13,6 +13,10 @@ import 'package:hackathon/widgets/place_list_item.dart';
 import 'package:hackathon/modules/route.dart' as r;
 import 'package:hackathon/widgets/post_list_item.dart';
 import 'package:hackathon/widgets/route_list_item.dart';
+import 'package:hackathon/widgets/stats_bloc.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
+
+const questProgress = ['Пройдено квестів', '',];
 
 class HomePage extends StatelessWidget {
   static const pageTitle = ['Головна', ''];
@@ -50,6 +54,8 @@ class HomePage extends StatelessWidget {
       Navigator.pushNamed(context, ProfilePage.routeName);
     }
 
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(pageTitle[currentLanguage]),
@@ -63,7 +69,36 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
-          final item = items[index];
+          if (index == 0) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: Column(
+                children: <Widget>[
+                  StatsBlock(),
+                  Container(height: 15),
+                  Text(questProgress[currentLanguage], style: theme.textTheme.headline,),
+                  Container(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LinearPercentIndicator(
+                        width: MediaQuery.of(context).size.width - 20,
+                        animation: true,
+                        lineHeight: 15.0,
+                        animationDuration: 2000,
+                        percent: 0.1,
+                        center: Text("16.0%"),
+                        linearStrokeCap: LinearStrokeCap.roundAll,
+                        progressColor: Colors.greenAccent,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }
+
+          final item = items[index - 1];
           switch (item.runtimeType) {
             case Place:
               return PlaceListItem(

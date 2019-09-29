@@ -4,6 +4,7 @@ import 'package:hackathon/screens/events_page.dart';
 import 'package:hackathon/screens/home_page.dart';
 import 'package:hackathon/screens/discover_page.dart';
 import 'package:hackathon/screens/profile_page.dart';
+import 'package:hackathon/screens/qr_code_page.dart';
 import 'package:hackathon/screens/quest_page.dart';
 import 'package:hackathon/screens/routes_page.dart';
 
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           DiscoverPage(),
           QuestPage(),
           EventsPage(),
-          ProfilePage(),
+          QRCodePage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -56,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.event),
           ),
           BottomNavigationBarItem(
-            title: Text(ProfilePage.pageTitle[currentLanguage]),
-            icon: Icon(Icons.account_circle),
+            title: Text('QR code'),
+            icon: Icon(Icons.settings_overscan),
           ),
         ],
         selectedItemColor: Colors.blueAccent,
