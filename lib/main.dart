@@ -4,6 +4,7 @@ import 'package:hackathon/screens/places_detail_page.dart';
 import 'package:hackathon/screens/post_detail_page.dart';
 import 'package:hackathon/screens/profile_page.dart';
 import 'package:hackathon/screens/quest_detail_page.dart';
+import 'package:hackathon/screens/route_start.dart';
 import 'package:hackathon/screens/routes_detail_page.dart';
 
 void main() => runApp(MyApp());
@@ -66,6 +67,11 @@ Route onGenerateRoute(RouteSettings settings) {
     case ProfilePage.routeName:
       return MaterialPageRoute(
         builder: (context) => ProfilePage(),
+      );
+
+    case RouteStart.routeName:
+      return MaterialPageRoute(
+        builder: (context) => RouteStart(),
       );
 
     default:

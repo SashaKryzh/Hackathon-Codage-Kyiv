@@ -4,6 +4,7 @@ import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/place.dart';
 
 import 'package:hackathon/modules/route.dart' as r;
+import 'package:hackathon/screens/route_start.dart';
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
@@ -35,7 +36,7 @@ class RouteDetailPage extends StatelessWidget {
     }
     
     void startRoute() {
-      Navigator.pushNamed(context, routeName);
+      Navigator.pushNamed(context, RouteStart.routeName);
     }
 
     Widget buyBlock() {
@@ -45,7 +46,7 @@ class RouteDetailPage extends StatelessWidget {
             child: Text(_routeTourSelf[currentLanguage], style: TextStyle(color: Colors.white, fontSize: 25),),
             color: Colors.green,
             padding: EdgeInsets.all(20),
-            onPressed: () {},
+            onPressed: startRoute,
           ),
           Container(height: 20),
           Row(

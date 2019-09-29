@@ -1,24 +1,20 @@
-import 'dart:async';
-
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hackathon/consts.dart';
 import 'package:hackathon/main.dart';
 import 'package:hackathon/modules/place.dart';
+import 'package:hackathon/screens/places_detail_page.dart';
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
-const grLegend = [
-  'Давні і сиві міфи свідчать про те, що грифон є хранителем скарбів. І що ще стародавні царі ховали в їх статуї свої багатства. Хоч одеський гриффон і переїхав в куточок старої Одеси зі Старобазарний площі і не має відношення до царів, авантюристи в усі часи вірили, що хитрі купці щось та приховали. Звідси, пані та панове, вічні пробоїни в плечі гриффона. (Ох, я вкрай сподіваюся, що до Вашого приходу міська управа вже відремонтувала бідну тваринку).',
-  'Les mythes anciens disent que le griffon est le gardien des trésors. Et que même les anciens rois cachaient leurs richesses dans leurs statues. Bien que le Griffon d’Odessa ait déménagé dans un coin de la vieille ville d’ Odessa depuis la place Starobazarnaya et n\'ait rien à voir avec les rois, mais les aventuriers ont toujours cru que des marchands rusés avaient caché quelque chose. Par conséquent, Mesdames et Messieurs,  ce pourquoi il y a des trous éternels dans l\'épaule du griffon qui ont été  fait par les chercheurs de  trésors. (Oh, j\'espère vraiment que d\'ici votre arrivée, le gouvernement de la ville aura déjà soigné le pauvre animal).'
-];
+class RouteStart extends StatefulWidget {
+  static const String routeName = '/route-start';
 
-// TODO: translate to Ukraine
-class PlaceDetailPage extends StatefulWidget {
-  static const String routeName = '/place-detail';
+  static const nextButton = ['Наступне', 'Le suivant'];
 
+  @override
+  _RouteStartState createState() => _RouteStartState();
+}
+
+class _RouteStartState extends State<RouteStart> {
   static const text1 = [
     'Туди ж він потрапив з знищеного Першого християнського цвинтаря, або з якогось санаторію, який до революції був приватної дачею.',
     'C\' est dans les années 1960-70 que cette sculpture représentant une créature mythique a été installée à son emplacement actuel.',
@@ -32,92 +28,74 @@ class PlaceDetailPage extends StatefulWidget {
     'Cette sculpture fait régulièrement l\'objet d\'acte de vandalisme, qui sont inspirés par les légendes urbaines. Puis elle est restaurée par les corps de ville. C\' est pourquoi l\' empreinte de manufacture n\'est presque  pas remarquable.',
   ];
 
-  static const cityLegendTitle = [
-    'Міська легенда',
-    'Le mythe urbain'
+  static const zagadka = [
+    'Ця істота, велично засідає на своєму п\'єдесталі, колись захищав один із входів у Старобазарний сквер. Зараз же, останній з 8-ми скульптур, он спрямує свій сумний та втомлений погляд на не менш поважних левів, вказуючих шлях до колонади. Що це за звір?',
+    'Cet animal, majestueusement assise sur son socle, gardait autrefois l\'une des entrées de la place Starobazarny. Maintenant, dernière des 8 sculptures, il pose ses yeux tristes et fatigués sur des lions non moins magnifiques, montrant le chemin vers la colonnade. Quel genre d’animal est-ce? '
   ];
 
-  final Place place;
+  static var var1 = [
+    'Лев',
+    'Lion'
+  ];
 
-  PlaceDetailPage({
-    this.place,
-  }) : assert(place != null);
+  static var var2 = [
+    'Грифон',
+    'Griffon'
+  ];
 
+  static var var3 = [
+    'Орел',
+    'Aigle'
+  ];
 
-  @override
-  _PlaceDetailPageState createState() => _PlaceDetailPageState();
-}
+  int currentScreen = 0;
 
-class _PlaceDetailPageState extends State<PlaceDetailPage> {
-  Completer<GoogleMapController> _controller = Completer();
-
-  void onMapCreated(GoogleMapController controller) {
-    if (_controller.isCompleted == false) {
-      _controller.complete(controller);
+  Future nextScreen() async {
+    if (currentScreen == 1) return;
+    switch (await showDialog<bool>(
+        context: context,
+        builder: (BuildContext context) {
+          return SimpleDialog(
+            title: Text(zagadka[currentLanguage]),
+            children: <Widget>[
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, false);
+                },
+                child: Text(var1[currentLanguage]),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, true);
+                },
+                child: Text(var2[currentLanguage]),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, false);
+                },
+                child: Text(var3[currentLanguage]),
+              ),
+            ],
+          );
+        })) {
+      case true:
+        setState(() {
+          currentScreen++;
+        });
+        break;
+      case false:
+        print(false);
+        break;
     }
-  }
-
-  final player = AudioCache();
-  @override
-  void initState() {
-    player.load('audio.mp3');
-    super.initState();
-  }
-
-  var _currentMapType = MapType.normal;
-
-  bool isPlaying = false;
-  void stopAudio() {
-    a.stop();
-    setState(() {
-      isPlaying = false;
-    });
-  }
-
-  AudioPlayer a;
-  Future playAudio() async {
-    a = await player.play('audio.mp3');
-    setState(() {
-      isPlaying = true;
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    var p = Place.places[currentLanguage].first;
 
-    final CameraPosition _cameraPosition = CameraPosition(
-      target: LatLng(46.4904006, 30.7354182),
-      zoom: 15.0,
-    );
-
-    var _markers = [
-      Marker(
-        markerId: MarkerId('666'),
-        position: LatLng(46.4904006, 30.7354182),
-//      infoWindow: InfoWindow(
-//        title: i.title,
-//        snippet: i.description,
-//        onTap: () => onPlaceMarkerTap(i),
-      ),
-    ];
-
-    Widget appBar() {
-      return AppBar(
-        title: Text(p.title),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.share),
-            onPressed: () {},
-          ),
-        ],
-      );
-    }
-
-    return Scaffold(
-      appBar: appBar(),
-      body: ListView(
+    Widget screen(Place p) {
+      return ListView(
         children: <Widget>[
           Image.asset(p.image),
 //          Padding(
@@ -134,8 +112,8 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(p.title, style: theme.textTheme.title),
-                Text(p.creator),
+                Text(p.title ?? '', style: theme.textTheme.title),
+                Text(p.creator ?? ''),
                 Text(p.creationDate ?? ''),
               ],
             ),
@@ -147,18 +125,26 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 icon: Icon(Icons.check_circle_outline),
                 onPressed: () {},
               ),
-              isPlaying == false ? IconButton(
+              IconButton(
                 icon: Icon(Icons.play_circle_outline),
-                onPressed: playAudio,
-              ) : IconButton(
-                icon: Icon(Icons.stop),
-                onPressed: stopAudio,
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(Icons.favorite_border),
                 onPressed: () {},
               ),
             ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: RaisedButton(
+              child: Text(
+                RouteStart.nextButton[currentLanguage],
+                style: TextStyle(color: Colors.white, fontSize: 17),
+              ),
+              color: Colors.green,
+              onPressed: nextScreen,
+            ),
           ),
           Divider(),
 //          Padding(
@@ -171,7 +157,9 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
           Container(
             height: 20,
           ),
-          Image.asset('assets/places/gr/33.jpg'),
+          currentScreen == 0
+              ? Image.asset('assets/places/gr/33.jpg')
+              : Container(),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Container(
@@ -204,19 +192,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
             padding: const EdgeInsets.all(8.0),
             child: Divider(),
           ),
-          HorizontalPadding(child: Text('${p.address}')),
-          Container(
-            height: 250,
-            child: Card(
-              child: GoogleMap(
-                markers: _markers.toSet(),
-                mapType: _currentMapType,
-                myLocationButtonEnabled: false,
-                initialCameraPosition: _cameraPosition,
-                onMapCreated: onMapCreated,
-              ),
-            ),
-          ),
+          HorizontalPadding(child: Text('${p.address ?? ''}')),
           Container(height: 30),
           Card(
             elevation: 0.4,
@@ -241,25 +217,24 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
             ),
           ),
           Container(height: 30),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: <Widget>[
-                BlockTitle(title: reviews[currentLanguage]),
-                Card(
-                  child: ListTile(
-                    title: Text(userName[currentLanguage]),
-                    subtitle: Text(commentOnPost[currentLanguage]),
-                    leading: CircleAvatar(
-                      backgroundImage: ExactAssetImage('assets/Anna.jpg'),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ],
+      );
+    }
+
+    final screens = [
+      screen(Place.places[currentLanguage].first),
+      screen(Place.places[currentLanguage][2]),
+    ];
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Guide'),
+        leading: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
+      body: screens[currentScreen],
     );
   }
 }
