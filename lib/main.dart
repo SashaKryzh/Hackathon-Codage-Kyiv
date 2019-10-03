@@ -10,7 +10,7 @@ import 'package:hackathon/screens/routes_detail_page.dart';
 void main() => runApp(MyApp());
 
 Function() changeLanguage;
-int currentLanguage = 0;
+int currentLanguage = 1;
 
 class MyApp extends StatefulWidget {
   @override

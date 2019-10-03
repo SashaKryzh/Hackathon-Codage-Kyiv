@@ -9,8 +9,8 @@ import 'package:hackathon/widgets/stats_bloc.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 const _about = [
-  'ілвоад діволаділо віоад овіалоє',
-  '',
+  'Франкофон со стажем.',
+  'Francоphonne avec l\' expérience.',
 ];
 
 const _achievement = [
