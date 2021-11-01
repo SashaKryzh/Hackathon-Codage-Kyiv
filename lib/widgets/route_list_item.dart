@@ -20,12 +20,17 @@ class RouteListItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            route.image != null
-                ? Image.asset(route.image)
-                : Container(),
+            route.image != null ? Image.asset(route.image) : Container(),
             ListTile(
-              title: Text(route.title, style: theme.textTheme.title,),
-              subtitle: Text(route.shortDescription ?? '', maxLines: 2, overflow: TextOverflow.ellipsis,),
+              title: Text(
+                route.title,
+                style: theme.textTheme.headline6,
+              ),
+              subtitle: Text(
+                route.shortDescription ?? '',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

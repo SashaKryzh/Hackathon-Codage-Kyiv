@@ -14,7 +14,7 @@ class BlockTitle extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: theme.textTheme.title,
+          style: theme.textTheme.headline6,
         ),
         Divider(
           thickness: 7,

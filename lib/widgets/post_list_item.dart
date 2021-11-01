@@ -12,7 +12,8 @@ class PostListItem extends StatelessWidget {
     this.onTap,
   }) : assert(post != null);
 
-  final description = 'Туди ж він потрапив з знищеного Першого християнського цвинтаря.';
+  final description =
+      'Туди ж він потрапив з знищеного Першого християнського цвинтаря.';
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +24,17 @@ class PostListItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            post.image != null
-                ? Image.asset(post.image)
-                : Container(),
+            post.image != null ? Image.asset(post.image) : Container(),
             ListTile(
-              title: Text(post.title, style: theme.textTheme.title,),
-              subtitle: Text(post.shortDescription ?? description, maxLines: 2, overflow: TextOverflow.ellipsis,),
+              title: Text(
+                post.title,
+                style: theme.textTheme.headline6,
+              ),
+              subtitle: Text(
+                post.shortDescription ?? description,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

@@ -41,7 +41,7 @@ class ProfilePage extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: theme.textTheme.title,
+            style: theme.textTheme.headline6,
           ),
           Divider(
             thickness: 7,
@@ -101,14 +101,14 @@ class ProfilePage extends StatelessWidget {
 //            children: <Widget>[
 //              Text(
 //                title,
-//                style: theme.textTheme.title,
+//                style: theme.textTheme.headline6,
 //              ),
 //              Container(
 //                height: 3,
 //              ),
 //              Text(
 //                description,
-//                style: theme.textTheme.subtitle,
+//                style: theme.textTheme.subtitle2,
 //              ),
 //              Container(
 //                height: 10,
@@ -142,7 +142,9 @@ class ProfilePage extends StatelessWidget {
         title: Text(pageTitle[currentLanguage]),
         actions: <Widget>[
           IconButton(
-            icon: currentLanguage == 0 ? Image.asset('assets/ukraine_flag.png') : Image.asset('assets/frenche_flag.png'),
+            icon: currentLanguage == 0
+                ? Image.asset('assets/ukraine_flag.png')
+                : Image.asset('assets/frenche_flag.png'),
             onPressed: changeLanguage,
           ),
           IconButton(
@@ -169,7 +171,7 @@ class ProfilePage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     userName[currentLanguage],
-                    style: theme.textTheme.title,
+                    style: theme.textTheme.headline6,
                   ),
                   // TODO: change
                   Container(

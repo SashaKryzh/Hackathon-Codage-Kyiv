@@ -1,16 +1,20 @@
-# hackathon
+# Hackathon Codage@Kyiv 🇫🇷
 
-A new Flutter application.
+Сreate a mobile application for the popularisation of French culture in Odessa.
 
-## Getting Started
+![Preview](/resources/preview.png)
 
-This project is a starting point for a Flutter application.
+**Our team took 2nd place 🥈**
 
-A few resources to get you started if this is your first Flutter project:
+### Features
+* User profile
+* Quests
+* Events
+* Guided tours
+* Achievements
+* View places on Google Maps
+* Ukrainian / French language
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Our team
+![Our team](/resources/our_team.jpg)
+(I am in red)

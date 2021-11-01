@@ -63,7 +63,7 @@ class PostDetailPage extends StatelessWidget {
 //            padding: const EdgeInsets.all(8.0),
 //            child: Text(
 //              p.title,
-//              style: theme.textTheme.title,
+//              style: theme.textTheme.headline6,
 //            ),
 //          ),
           Container(
@@ -76,7 +76,7 @@ class PostDetailPage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(p.title, style: theme.textTheme.title),
+                    Text(p.title, style: theme.textTheme.headline6),
                     Text(p.creator + ' - ' + p.creationDate),
                   ],
                 ),
@@ -105,7 +105,7 @@ class PostDetailPage extends StatelessWidget {
           HorizontalPadding(
             child: Text(
               _text4[currentLanguage],
-              style: theme.textTheme.headline,
+              style: theme.textTheme.headline5,
             ),
           ),
           Container(height: 20),

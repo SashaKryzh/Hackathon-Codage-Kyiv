@@ -8,12 +8,24 @@ import 'package:hackathon/screens/route_start.dart';
 import 'package:hackathon/widgets/block_title.dart';
 import 'package:hackathon/widgets/horizontal_padding.dart';
 
-const _routeTour = ['З гідом:', 'Avec votre guide',];
-const _routeTourSelf = ['Почати самостійно', 'Commencer indépandement',];
+const _routeTour = [
+  'З гідом:',
+  'Avec votre guide',
+];
+const _routeTourSelf = [
+  'Почати самостійно',
+  'Commencer indépandement',
+];
 
-const _infoTitle = ['Інформація', '\'L\' information',];
+const _infoTitle = [
+  'Інформація',
+  '\'L\' information',
+];
 
-const _placesTitle = ['Місця на маршруті', 'Des lieux sur le circuit',];
+const _placesTitle = [
+  'Місця на маршруті',
+  'Des lieux sur le circuit',
+];
 
 class RouteDetailPage extends StatelessWidget {
   static const String routeName = '/route-detail';
@@ -34,7 +46,7 @@ class RouteDetailPage extends StatelessWidget {
         ],
       );
     }
-    
+
     void startRoute() {
       Navigator.pushNamed(context, RouteStart.routeName);
     }
@@ -43,7 +55,10 @@ class RouteDetailPage extends StatelessWidget {
       return Column(
         children: <Widget>[
           RaisedButton(
-            child: Text(_routeTourSelf[currentLanguage], style: TextStyle(color: Colors.white, fontSize: 25),),
+            child: Text(
+              _routeTourSelf[currentLanguage],
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
             color: Colors.green,
             padding: EdgeInsets.all(20),
             onPressed: startRoute,
@@ -84,7 +99,7 @@ class RouteDetailPage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(route.title, style: theme.textTheme.title),
+                    Text(route.title, style: theme.textTheme.headline6),
                   ],
                 ),
                 IconButton(

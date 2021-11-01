@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     changeLanguage = changeLanguageMyApp;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,

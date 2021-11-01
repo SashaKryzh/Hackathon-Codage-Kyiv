@@ -33,20 +33,11 @@ class _RouteStartState extends State<RouteStart> {
     'Cet animal, majestueusement assise sur son socle, gardait autrefois l\'une des entrées de la place Starobazarny. Maintenant, dernière des 8 sculptures, il pose ses yeux tristes et fatigués sur des lions non moins magnifiques, montrant le chemin vers la colonnade. Quel genre d’animal est-ce? '
   ];
 
-  static var var1 = [
-    'Лев',
-    'Lion'
-  ];
+  static var var1 = ['Лев', 'Lion'];
 
-  static var var2 = [
-    'Грифон',
-    'Griffon'
-  ];
+  static var var2 = ['Грифон', 'Griffon'];
 
-  static var var3 = [
-    'Орел',
-    'Aigle'
-  ];
+  static var var3 = ['Орел', 'Aigle'];
 
   int currentScreen = 0;
 
@@ -102,7 +93,7 @@ class _RouteStartState extends State<RouteStart> {
 //            padding: const EdgeInsets.all(8.0),
 //            child: Text(
 //              p.title,
-//              style: theme.textTheme.title,
+//              style: theme.textTheme.headline6,
 //            ),
 //          ),
           Container(
@@ -112,7 +103,7 @@ class _RouteStartState extends State<RouteStart> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(p.title ?? '', style: theme.textTheme.title),
+                Text(p.title ?? '', style: theme.textTheme.headline6),
                 Text(p.creator ?? ''),
                 Text(p.creationDate ?? ''),
               ],
@@ -170,7 +161,7 @@ class _RouteStartState extends State<RouteStart> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(PlaceDetailPage.cityLegendTitle[currentLanguage],
-                          style: theme.textTheme.headline),
+                          style: theme.textTheme.headline5),
                       Text(grLegend[currentLanguage]),
                     ],
                   ),
@@ -210,7 +201,7 @@ class _RouteStartState extends State<RouteStart> {
                   ),
                   Text(
                     'Wikipedia',
-                    style: theme.textTheme.headline,
+                    style: theme.textTheme.headline5,
                   ),
                 ],
               ),

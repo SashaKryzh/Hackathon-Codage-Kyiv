@@ -32,17 +32,13 @@ class PlaceDetailPage extends StatefulWidget {
     'Cette sculpture fait régulièrement l\'objet d\'acte de vandalisme, qui sont inspirés par les légendes urbaines. Puis elle est restaurée par les corps de ville. C\' est pourquoi l\' empreinte de manufacture n\'est presque  pas remarquable.',
   ];
 
-  static const cityLegendTitle = [
-    'Міська легенда',
-    'Le mythe urbain'
-  ];
+  static const cityLegendTitle = ['Міська легенда', 'Le mythe urbain'];
 
   final Place place;
 
   PlaceDetailPage({
     this.place,
   }) : assert(place != null);
-
 
   @override
   _PlaceDetailPageState createState() => _PlaceDetailPageState();
@@ -124,7 +120,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
 //            padding: const EdgeInsets.all(8.0),
 //            child: Text(
 //              p.title,
-//              style: theme.textTheme.title,
+//              style: theme.textTheme.headline6,
 //            ),
 //          ),
           Container(
@@ -134,7 +130,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(p.title, style: theme.textTheme.title),
+                Text(p.title, style: theme.textTheme.headline6),
                 Text(p.creator),
                 Text(p.creationDate ?? ''),
               ],
@@ -147,13 +143,15 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 icon: Icon(Icons.check_circle_outline),
                 onPressed: () {},
               ),
-              isPlaying == false ? IconButton(
-                icon: Icon(Icons.play_circle_outline),
-                onPressed: playAudio,
-              ) : IconButton(
-                icon: Icon(Icons.stop),
-                onPressed: stopAudio,
-              ),
+              isPlaying == false
+                  ? IconButton(
+                      icon: Icon(Icons.play_circle_outline),
+                      onPressed: playAudio,
+                    )
+                  : IconButton(
+                      icon: Icon(Icons.stop),
+                      onPressed: stopAudio,
+                    ),
               IconButton(
                 icon: Icon(Icons.favorite_border),
                 onPressed: () {},
@@ -182,7 +180,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(PlaceDetailPage.cityLegendTitle[currentLanguage],
-                          style: theme.textTheme.headline),
+                          style: theme.textTheme.headline5),
                       Text(grLegend[currentLanguage]),
                     ],
                   ),
@@ -234,7 +232,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                   ),
                   Text(
                     'Wikipedia',
-                    style: theme.textTheme.headline,
+                    style: theme.textTheme.headline5,
                   ),
                 ],
               ),

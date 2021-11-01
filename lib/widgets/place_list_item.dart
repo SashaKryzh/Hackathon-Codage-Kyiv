@@ -12,7 +12,10 @@ class PlaceListItem extends StatelessWidget {
     this.onTap,
   }) : assert(place != null);
 
-  final description = ['Туди ж він потрапив з знищеного Першого християнського цвинтаря.', 'Membres de l\'équipe: Sandra Zadorozhnaya, Evgeny Fedorich, Alexander Krijanovski'];
+  final description = [
+    'Туди ж він потрапив з знищеного Першого християнського цвинтаря.',
+    'Membres de l\'équipe: Sandra Zadorozhnaya, Evgeny Fedorich, Alexander Krijanovski'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +26,17 @@ class PlaceListItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            place.image != null
-                ? Image.asset(place.image)
-                : Container(),
+            place.image != null ? Image.asset(place.image) : Container(),
             ListTile(
-              title: Text(place.title, style: theme.textTheme.title,),
-              subtitle: Text(place.shortDescription ?? description[currentLanguage], maxLines: 2, overflow: TextOverflow.ellipsis,),
+              title: Text(
+                place.title,
+                style: theme.textTheme.headline6,
+              ),
+              subtitle: Text(
+                place.shortDescription ?? description[currentLanguage],
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

@@ -28,16 +28,16 @@ class QuestListItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-              Text(
-                quest.title,
-                style: theme.textTheme.title,
-              ),
-              Container(
-                height: 3,
-              ),
+                Text(
+                  quest.title,
+                  style: theme.textTheme.headline6,
+                ),
+                Container(
+                  height: 3,
+                ),
                 Text(
                   quest.description,
-                  style: theme.textTheme.subtitle,
+                  style: theme.textTheme.subtitle2,
                 ),
                 Container(
                   height: 10,

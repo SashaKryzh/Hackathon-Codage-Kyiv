@@ -16,7 +16,10 @@ import 'package:hackathon/widgets/route_list_item.dart';
 import 'package:hackathon/widgets/stats_bloc.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-const questProgress = ['Пройдено квестів', 'Les questes passée',];
+const questProgress = [
+  'Пройдено квестів',
+  'Les questes passée',
+];
 
 class HomePage extends StatelessWidget {
   static const pageTitle = ['Головна', 'La page principale'];
@@ -76,7 +79,10 @@ class HomePage extends StatelessWidget {
                 children: <Widget>[
                   StatsBlock(),
                   Container(height: 15),
-                  Text(questProgress[currentLanguage], style: theme.textTheme.headline,),
+                  Text(
+                    questProgress[currentLanguage],
+                    style: theme.textTheme.headline5,
+                  ),
                   Container(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
